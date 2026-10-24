@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+﻿import { useMemo, useState } from "react";
 import {
   ArrowRight,
   Bell,
@@ -14,8 +14,6 @@ import {
   MapPin,
   Music,
   PlayCircle,
-  Plus,
-  Search,
   Sparkles,
   Ticket,
   Users,
@@ -527,7 +525,7 @@ export default function Event() {
                     <div>
                       <strong>{eventName}</strong>
                       <span>
-                        {index === 0 ? "6:00 PM" : "7:30 PM"} • Mumbai
+                        {index === 0 ? "6:00 PM" : "7:30 PM"} â€¢ Mumbai
                       </span>
                     </div>
 
@@ -652,3 +650,4 @@ export default function Event() {
     </main>
   );
 }
+

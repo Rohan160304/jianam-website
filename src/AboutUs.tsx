@@ -1,26 +1,18 @@
-import {
+﻿import {
   ArrowRight,
-  BriefcaseBusiness,
   Building2,
-  CalendarDays,
   CheckCircle2,
   Eye,
   Flag,
-  Gift,
   Globe2,
   GraduationCap,
   HandHeart,
   Heart,
   Landmark,
-  Menu,
-  Moon,
-  ShieldCheck,
   Sparkles,
   Target,
   Users,
-  X,
 } from "lucide-react";
-import { useState } from "react";
 import "./AboutUs.css";
 
 const groups = [
@@ -318,7 +310,7 @@ function MissionVisionValues() {
         <p>
           To create a unified digital platform that connects Jain
           individuals, families, temples, monks, organizations, and communities
-          worldwide — preserving our heritage while empowering future
+          worldwide â€” preserving our heritage while empowering future
           generations.
         </p>
 
@@ -584,7 +576,7 @@ function JoiningHandsBanner() {
 
       <div className="joining-hands">
         <div className="hands-glow" />
-        <div className="hands-symbol">🙏</div>
+        <div className="hands-symbol">ðŸ™</div>
       </div>
 
       <button
@@ -623,7 +615,7 @@ export default function AboutUs() {
         aria-label="Back to top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        ↑
+        â†‘
       </button>
     </div>
   );
