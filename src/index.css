@@ -1,0 +1,73 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", Arial, sans-serif;
+  color: #101c42;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  --navy: #071e59;
+  --blue: #174de5;
+  --muted: #596786;
+  --line: #e7ebf4;
+  --soft-blue: #f5f8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-padding-top: 95px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+body, button, input {
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+button, a, input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, input {
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 3px solid #7da3ff;
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #ffffff;
+  background: #174de5;
+}
