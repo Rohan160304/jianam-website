@@ -1,9 +1,12 @@
-
 import { useState, type FormEvent } from "react";
 import AboutUs from "./AboutUs";
 import FeaturesPage from "./Features";
 import CommunityPage from "./community";
 import EventPage from "./Events";
+import Resources from "./Resources";
+import ContactPage from "./Contact";
+import LoginPage from "./Login";
+import Signup from "./Signup";
 import {
   ArrowDown,
   ArrowRight,
@@ -43,19 +46,84 @@ import {
 import "./App.css";
 
 const features = [
-  { name: "Monk Tracking", description: "Live tracking & safety", icon: Compass, color: "blue" },
-  { name: "Temple Management", description: "Digital temple operations", icon: Landmark, color: "orange" },
-  { name: "Community Feed", description: "Updates & announcements", icon: Users, color: "green" },
-  { name: "Jain Music", description: "Bhakti & devotional", icon: Music, color: "purple" },
-  { name: "Learning", description: "Knowledge & scriptures", icon: BookOpen, color: "violet" },
-  { name: "Pathshala", description: "Kids' learning hub", icon: GraduationCap, color: "coral" },
-  { name: "Volunteer", description: "Seva & volunteering", icon: HandHeart, color: "green" },
-  { name: "Donations", description: "Secure & transparent", icon: Gift, color: "orange" },
-  { name: "Jobs", description: "Find & post jobs", icon: BriefcaseBusiness, color: "teal" },
-  { name: "Visitor Management", description: "Visit and crowd Management", icon: House, color: "purple" },
-  { name: "Matrimony", description: "Jain matrimonial", icon: Heart, color: "coral" },
-  { name: "Events", description: "Events & gatherings", icon: CalendarDays, color: "teal" },
-  { name: "Tours & Yatras", description: "Pilgrimage & tours", icon: Building2, color: "violet" },
+  {
+    name: "Monk Tracking",
+    description: "Live tracking & safety",
+    icon: Compass,
+    color: "blue",
+  },
+  {
+    name: "Temple Management",
+    description: "Digital temple operations",
+    icon: Landmark,
+    color: "orange",
+  },
+  {
+    name: "Community Feed",
+    description: "Updates & announcements",
+    icon: Users,
+    color: "green",
+  },
+  {
+    name: "Jain Music",
+    description: "Bhakti & devotional",
+    icon: Music,
+    color: "purple",
+  },
+  {
+    name: "Learning",
+    description: "Knowledge & scriptures",
+    icon: BookOpen,
+    color: "violet",
+  },
+  {
+    name: "Pathshala",
+    description: "Kids' learning hub",
+    icon: GraduationCap,
+    color: "coral",
+  },
+  {
+    name: "Volunteer",
+    description: "Seva & volunteering",
+    icon: HandHeart,
+    color: "green",
+  },
+  {
+    name: "Donations",
+    description: "Secure & transparent",
+    icon: Gift,
+    color: "orange",
+  },
+  {
+    name: "Jobs",
+    description: "Find & post jobs",
+    icon: BriefcaseBusiness,
+    color: "teal",
+  },
+  {
+    name: "Visitor Management",
+    description: "Visit and crowd Management",
+    icon: House,
+    color: "purple",
+  },
+  {
+    name: "Matrimony",
+    description: "Jain matrimonial",
+    icon: Heart,
+    color: "coral",
+  },
+  {
+    name: "Events",
+    description: "Events & gatherings",
+    icon: CalendarDays,
+    color: "teal",
+  },
+  {
+    name: "Tours & Yatras",
+    description: "Pilgrimage & tours",
+    icon: Building2,
+    color: "violet",
+  },
 ];
 
 const communityNodes = [
@@ -67,7 +135,11 @@ const communityNodes = [
   { label: "Events", icon: CalendarDays, className: "node-events" },
   { label: "Jobs", icon: BriefcaseBusiness, className: "node-jobs" },
   { label: "Matrimony", icon: Heart, className: "node-matrimony" },
-  { label: "Visitor Management", icon: House, className: "node-property" },
+  {
+    label: "Visitor Management",
+    icon: House,
+    className: "node-property",
+  },
   { label: "Volunteer", icon: HandHeart, className: "node-volunteer" },
   { label: "Donations", icon: Gift, className: "node-donations" },
 ];
@@ -75,22 +147,26 @@ const communityNodes = [
 const testimonials = [
   {
     name: "Temple Trustees",
-    quote: "JiNANAM has transformed how we share temple updates and connect with devotees.",
+    quote:
+      "JiNANAM has transformed how we share temple updates and connect with devotees.",
     initials: "TT",
   },
   {
     name: "Community Leaders",
-    quote: "A powerful platform that brings our community and generations closer together.",
+    quote:
+      "A powerful platform that brings our community and generations closer together.",
     initials: "CL",
   },
   {
     name: "Families",
-    quote: "Everything we need for our Jain lifestyle is now beautifully and easily in one app.",
+    quote:
+      "Everything we need for our Jain lifestyle is now beautifully and easily in one app.",
     initials: "FA",
   },
   {
     name: "Youth",
-    quote: "An amazing platform for learning, connecting and growing as Jain youth.",
+    quote:
+      "An amazing platform for learning, connecting and growing as Jain youth.",
     initials: "YO",
   },
 ];
@@ -120,11 +196,14 @@ function Navbar() {
   const [language, setLanguage] = useState("EN");
 
   const currentPath = window.location.pathname;
+
   const isHomePage = currentPath === "/";
   const isAboutPage = currentPath === "/about";
   const isFeaturesPage = currentPath === "/features";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
+  const isResourcesPage = currentPath === "/resources";
+  const isContactPage = currentPath === "/contact";
 
   const goTo = (item: string) => {
     setMenuOpen(false);
@@ -136,6 +215,8 @@ function Navbar() {
       Features: "/features",
       Community: "/community",
       Events: "/events",
+      Resources: "/resources",
+      Contact: "/contact",
     };
 
     if (pageRoutes[item]) {
@@ -167,7 +248,7 @@ function Navbar() {
             goTo("Home");
           }}
         >
-          <img src="/logo.png" alt="JiNANAM Foundation" />
+          <img src="/logo2.png" alt="JiNANAM Foundation" />
         </a>
 
         <nav
@@ -180,7 +261,9 @@ function Navbar() {
               (item === "About" && isAboutPage) ||
               (item === "Features" && isFeaturesPage) ||
               (item === "Community" && isCommunityPage) ||
-              (item === "Events" && isEventsPage);
+              (item === "Events" && isEventsPage) ||
+              (item === "Resources" && isResourcesPage) ||
+              (item === "Contact" && isContactPage);
 
             const href =
               item === "Home"
@@ -193,7 +276,9 @@ function Navbar() {
                       ? "/community"
                       : item === "Events"
                         ? "/events"
-                        : `/#${item.toLowerCase()}`;
+                        : item === "Resources"
+                          ? "/resources"
+                          : "/contact";
 
             return (
               <a
@@ -215,14 +300,14 @@ function Navbar() {
         <div className="nav-actions">
           <button
             className="button button-outline login-button"
-            onClick={() => goTo("Contact")}
+            onClick={() => navigateToPage("/login")}
           >
             Login
           </button>
 
           <button
             className="button button-primary signup-button"
-            onClick={() => goTo("Contact")}
+            onClick={() => navigateToPage("/signup")}
           >
             Sign Up
           </button>
@@ -339,9 +424,8 @@ function Hero() {
         </h1>
 
         <p className="hero-description">
-          Connecting Temples, Monks, Families, Pathshalas, Youth,
-          Events, Donations, Learning and Community — all in one
-          ecosystem.
+          Connecting Temples, Monks, Families, Pathshalas, Youth, Events,
+          Donations, Learning and Community — all in one ecosystem.
         </p>
 
         <div className="hero-buttons">
@@ -503,10 +587,7 @@ function WhyJinANAM() {
   ];
 
   return (
-    <section
-      className="why-section section-shell section-block"
-      id="about"
-    >
+    <section className="why-section section-shell section-block" id="about">
       <div className="why-art">
         <div className="temple-image-wrap">
           <img
@@ -690,7 +771,9 @@ function Testimonials() {
           >
             <span className="quote-mark">“</span>
             <div className="testimonial-person">
-              <div className={`testimonial-avatar testimonial-avatar-${index}`}>
+              <div
+                className={`testimonial-avatar testimonial-avatar-${index}`}
+              >
                 {item.initials}
               </div>
               <strong>{item.name}</strong>
@@ -809,10 +892,7 @@ function PhoneMockup({
 
 function DownloadSection() {
   return (
-    <section
-      className="download-section section-shell"
-      id="download"
-    >
+    <section className="download-section section-shell" id="download">
       <div className="download-copy">
         <span className="download-eyebrow">
           <Smartphone size={15} />
@@ -839,6 +919,7 @@ function DownloadSection() {
               <strong>Google Play</strong>
             </span>
           </a>
+
           <a
             href="#download"
             onClick={(event) => event.preventDefault()}
@@ -938,6 +1019,8 @@ function Footer() {
       Features: "/features",
       Community: "/community",
       Events: "/events",
+      Resources: "/resources",
+      Contact: "/contact",
     };
 
     if (pageRoutes[label]) {
@@ -945,31 +1028,20 @@ function Footer() {
       return;
     }
 
-    if (label === "Resources") {
-      navigateToPage("/features");
+    const sectionId = label.toLowerCase().replaceAll(" ", "-");
+
+    if (window.location.pathname !== "/") {
+      window.location.href = `/#${sectionId}`;
       return;
     }
 
-    const known: Record<string, string> = {
-      Contact: "contact",
-    };
-
-    const target = known[label];
-
-    if (target) {
-      if (window.location.pathname !== "/") {
-        window.location.href = `/#${target}`;
-        return;
-      }
-
-      document
-        .getElementById(target)
-        ?.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (
-    <footer className="site-footer" id="contact">
+    <footer className="site-footer" id="site-footer">
       <div className="footer-main section-shell">
         <div className="footer-brand-column">
           <a
@@ -980,7 +1052,7 @@ function Footer() {
               footerGo("Home");
             }}
           >
-            <img src="/logo.png" alt="JiNANAM Foundation" />
+            <img src="/logo2.png" alt="JiNANAM Foundation" />
           </a>
 
           <p>
@@ -990,28 +1062,31 @@ function Footer() {
 
           <div className="social-links">
             <a
-              href="#contact"
+              href="#site-footer"
               aria-label="Facebook"
               onClick={(event) => event.preventDefault()}
             >
               <span className="social-letter">f</span>
             </a>
+
             <a
-              href="#contact"
+              href="#site-footer"
               aria-label="Instagram"
               onClick={(event) => event.preventDefault()}
             >
               <span className="social-letter">◎</span>
             </a>
+
             <a
-              href="#contact"
+              href="#site-footer"
               aria-label="YouTube"
               onClick={(event) => event.preventDefault()}
             >
               <span className="social-letter">▶</span>
             </a>
+
             <a
-              href="#contact"
+              href="#site-footer"
               aria-label="LinkedIn"
               onClick={(event) => event.preventDefault()}
             >
@@ -1036,9 +1111,15 @@ function Footer() {
                             ? "/community"
                             : link === "Events"
                               ? "/events"
-                              : link === "Home"
-                                ? "/"
-                                : `#${link.toLowerCase().replaceAll(" ", "-")}`
+                              : link === "Resources"
+                                ? "/resources"
+                                : link === "Contact"
+                                  ? "/contact"
+                                  : link === "Home"
+                                    ? "/"
+                                    : `#${link
+                                        .toLowerCase()
+                                        .replaceAll(" ", "-")}`
                     }
                     onClick={(event) => {
                       event.preventDefault();
@@ -1063,6 +1144,7 @@ function Footer() {
             <label className="sr-only" htmlFor="newsletter-email">
               Your email address
             </label>
+
             <input
               id="newsletter-email"
               type="email"
@@ -1071,6 +1153,7 @@ function Footer() {
               onChange={(event) => setEmail(event.target.value)}
               required
             />
+
             <button type="submit" aria-label="Subscribe">
               <ArrowRight size={18} />
             </button>
@@ -1086,9 +1169,11 @@ function Footer() {
         <span>
           <MapPin size={16} /> Mulund, Mumbai, Maharashtra, India
         </span>
+
         <span>
           <Globe2 size={16} /> www.JINANAM.org
         </span>
+
         <span>
           <Mail size={16} /> Hello@jinanam.org
         </span>
@@ -1099,6 +1184,7 @@ function Footer() {
           <span>
             © 2025 JiNANAM Foundation. All rights reserved.
           </span>
+
           <span>
             One Community. Infinite Possibilities.
             <span className="india-flag">🇮🇳</span>
@@ -1112,10 +1198,24 @@ function Footer() {
 function App() {
   const currentPath = window.location.pathname;
 
+  const isLoginPage = currentPath === "/login";
+  const isSignupPage = currentPath === "/signup";
   const isAboutPage = currentPath === "/about";
   const isFeaturesPage = currentPath === "/features";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
+  const isResourcesPage = currentPath === "/resources";
+  const isContactPage = currentPath === "/contact";
+
+  // Render Login and Signup pages independently,
+  // without the main navbar or footer.
+  if (isLoginPage) {
+    return <LoginPage />;
+  }
+
+  if (isSignupPage) {
+    return <Signup />;
+  }
 
   return (
     <div className="app">
@@ -1130,6 +1230,10 @@ function App() {
           <CommunityPage />
         ) : isEventsPage ? (
           <EventPage />
+        ) : isResourcesPage ? (
+          <Resources />
+        ) : isContactPage ? (
+          <ContactPage />
         ) : (
           <>
             <Hero />
@@ -1148,7 +1252,9 @@ function App() {
       {!isAboutPage &&
         !isFeaturesPage &&
         !isCommunityPage &&
-        !isEventsPage && (
+        !isEventsPage &&
+        !isResourcesPage &&
+        !isContactPage && (
           <button
             className="back-to-top"
             aria-label="Back to top"
