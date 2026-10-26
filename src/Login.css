@@ -9,7 +9,7 @@
   isolation: isolate;
   min-height: 100vh;
   overflow: hidden;
-  background: #fffaf2;
+  background: #0f37bb;
   color: var(--login-text);
   font-family: inherit;
 }
@@ -33,7 +33,7 @@
   background:
     linear-gradient(
       100deg,
-      rgba(255, 249, 238, 0.96) 0%,
+      rgba(238, 249, 255, 0.96) 0%,
       rgba(255, 249, 238, 0.91) 43%,
       rgba(255, 253, 248, 0.94) 100%
     );
@@ -148,7 +148,7 @@
   align-items: center;
   gap: 12px;
   margin-top: 18px;
-  color: #8a7257;
+  color: #0a0500;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.8px;
@@ -164,7 +164,7 @@
 .login-intro-footer {
   margin: 0;
   padding-top: 20px;
-  color: #817768;
+  color: #687681;
   font-size: 12px;
   line-height: 1.7;
 }
@@ -183,7 +183,7 @@
   padding: clamp(26px, 3.2vw, 42px);
   border: 1px solid rgba(125, 97, 58, 0.12);
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(248, 249, 250, 0.94);
   box-shadow:
     0 25px 75px rgba(76, 55, 29, 0.1),
     0 3px 12px rgba(76, 55, 29, 0.04);
@@ -201,9 +201,9 @@
   width: 62px;
   height: 62px;
   margin: 0 auto 19px;
-  border: 1px solid #f4dfc1;
+  border: 1px solid #90bcee;
   border-radius: 20px;
-  background: #fff4e4;
+  background: #bebfee;
 }
 
 .login-card-mark img {
