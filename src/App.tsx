@@ -302,14 +302,14 @@ function Navbar() {
             className="button button-outline login-button"
             onClick={() => navigateToPage("/login")}
           >
-            Login
+            Member Login
           </button>
 
           <button
             className="button button-primary signup-button"
             onClick={() => navigateToPage("/signup")}
           >
-            Sign Up
+            Admin Login
           </button>
 
           <div className="language-wrap">
