@@ -1,7 +1,7 @@
 
 .contact-page {
-  --contact-orange: #e99a35;
-  --contact-orange-dark: #d77d1d;
+  --contact-orange: #3565e9;
+  --contact-orange-dark: #1d58d7;
   --contact-navy: #183c55;
   --contact-text: #263746;
   --contact-muted: #697987;
@@ -25,7 +25,7 @@
   padding: 68px 0 76px;
   background:
     radial-gradient(ellipse at 10% 15%, #fff0dc 0, transparent 36%),
-    linear-gradient(115deg, #fffaf4 0%, #ffffff 65%, #fff8ef 100%);
+    linear-gradient(115deg, #f4faff 0%, #ffffff 65%, #eff9ff 100%);
 }
 
 .contact-hero-inner {
@@ -101,7 +101,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #c77a22;
+  color: #226fc7;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -113,7 +113,7 @@
   height: 8px;
   border-radius: 50%;
   background: var(--contact-orange);
-  box-shadow: 0 0 0 5px #fbe9d2;
+  box-shadow: 0 0 0 5px #d2e2fb;
 }
 
 .contact-hero-copy h1 {
@@ -246,7 +246,7 @@
   height: 58px;
   border-radius: 16px;
   background: rgb(255 255 255 / 11%);
-  color: #ffc575;
+  color: #75b1ff;
 }
 
 .contact-form-aside h3 {
@@ -284,7 +284,7 @@
 .contact-aside-item svg {
   flex-shrink: 0;
   margin-top: 1px;
-  color: #ffc575;
+  color: #75e3ff;
 }
 
 .contact-aside-decoration {
@@ -379,7 +379,7 @@
   padding: 12px 14px;
   border-radius: 8px;
   background: #fff5e8;
-  color: #875017;
+  color: #173587;
   font-size: 13px;
   line-height: 1.7;
   overflow-wrap: anywhere;
@@ -425,7 +425,7 @@
 }
 
 .contact-detail-icon.orange {
-  color: #c77a22;
+  color: #226fc7;
   background: #fff0dc;
 }
 
@@ -464,17 +464,17 @@
   gap: 17px;
   margin-top: 27px;
   padding: 23px 26px;
-  border: 1px solid #f0e2cf;
+  border: 1px solid #cfe1f0;
   border-radius: 13px;
-  background: #fffaf3;
+  background: #f3faff;
 }
 
 .contact-website-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: #ffedda;
-  color: #c77a22;
+  background: #daedff;
+  color: #226fc7;
 }
 
 .contact-website-strip > div:nth-child(2) {
@@ -499,7 +499,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #bc711e;
+  color: #1e62bc;
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
@@ -535,9 +535,9 @@
   flex-shrink: 0;
   min-height: 44px;
   padding: 0 16px;
-  border: 1px solid #efd6b5;
+  border: 1px solid #b5deef;
   border-radius: 8px;
-  background: #fffaf3;
+  background: #f3f9ff;
 }
 
 .contact-map-frame {
@@ -572,8 +572,8 @@
 .contact-impact-section {
   padding: 78px 0;
   background:
-    radial-gradient(ellipse at 85% 10%, #ffead0 0, transparent 30%),
-    linear-gradient(110deg, #fff7ed, #fffaf5 60%, #fef3e5);
+    radial-gradient(ellipse at 85% 10%, #d0eaff 0, transparent 30%),
+    linear-gradient(110deg, #edf3ff, #f5fcff 60%, #e5f6fe);
 }
 
 .contact-impact-inner {
