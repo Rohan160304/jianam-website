@@ -666,7 +666,7 @@
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
   align-items: center;
   gap: clamp(30px, 5vw, 75px);
-  padding-top: 55px;
+  padding-top: 20px;
 }
 
 .why-art {
@@ -774,7 +774,7 @@
   align-items: center;
   gap: 8px;
   color: #1748c8;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -789,8 +789,8 @@
   grid-template-columns: minmax(230px, 0.52fr) minmax(0, 1.48fr);
   align-items: center;
   gap: clamp(25px, 4vw, 60px);
-  padding-top: 25px;
-  padding-bottom: 40px;
+  padding-top: 5px;
+  padding-bottom: 25px;
 }
 
 .community-intro h2 {
@@ -799,14 +799,14 @@
 
 .community-intro > p {
   color: #62708d;
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .country-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 22px;
+  gap: 10px 20px;
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
@@ -814,7 +814,7 @@
 
 .country-list li {
   position: relative;
-  padding-left: 18px;
+  padding-left: 15px;
   color: #253657;
   font-size: 14px;
   font-weight: 600;
@@ -823,8 +823,8 @@
 .country-list li::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 8px;
+  left: 5px;
+  top: 6px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -883,7 +883,7 @@
   border: 1px solid #e8edf7;
   border-radius: 100px;
   box-shadow: 0 4px 15px #15264c0d;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   white-space: nowrap;
   transform: translateX(-50%);
@@ -893,7 +893,7 @@
 
 .testimonials-section {
   padding-top: 35px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 .testimonial-heading {
@@ -918,8 +918,8 @@
 .carousel-controls button {
   display: grid;
   place-items: center;
-  width: 43px;
-  height: 43px;
+  width: 40px;
+  height: 40px;
   color: #1a3477;
   background: #fff;
   border: 1px solid #e3e9f5;
@@ -1011,7 +1011,7 @@
   gap: clamp(18px, 2.5vw, 35px);
   min-height: 300px;
   padding: 35px clamp(22px, 4vw, 58px);
-  margin-bottom: 0;
+  margin-bottom: -20px;
   overflow: hidden;
   color: #fff;
   border-radius: 25px 25px 0 0;
@@ -1122,7 +1122,7 @@
   gap: 13px;
   align-self: stretch;
   min-width: 0;
-  padding-top: 8px;
+  padding-top: -20px;
 }
 
 .phone-frame {
@@ -1238,7 +1238,7 @@
 }
 
 .phone-welcome-screen p {
-  margin: 0;
+  margin: 0.50px;
   color: #2b4381;
   font-size: 12px;
   font-weight: 700;
@@ -1246,7 +1246,7 @@
 }
 
 .phone-small-copy {
-  margin-top: 8px;
+  margin-top: 5px;
   color: #687796;
   font-size: 8px;
 }
@@ -1258,7 +1258,7 @@
   gap: 7px;
   width: 100%;
   min-height: 29px;
-  margin-top: 12px;
+  margin-top: 5px;
   color: #fff;
   background: #1744b5;
   border: 0;
@@ -1268,7 +1268,7 @@
 }
 
 .phone-app-screen {
-  padding: 25px 9px 0;
+  padding: 22px 9px 0;
   color: #14264c;
 }
 
@@ -1300,7 +1300,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 11px 4px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .app-feature {
@@ -2123,7 +2123,7 @@
   }
 
   .community-intro > p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .country-list {
@@ -2403,3 +2403,5 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+

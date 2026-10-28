@@ -1,3 +1,4 @@
+
 .about-page {
   min-height: 100vh;
   background: #ffffff;
@@ -197,7 +198,7 @@
   display: inline-block;
   margin-bottom: 13px;
   color: #5572ae;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 1.6px;
 }
@@ -234,7 +235,7 @@
   min-height: 39px;
   padding: 0 18px;
   border-radius: 10px;
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .about-trust {
@@ -244,7 +245,7 @@
 .about-trust > span {
   display: block;
   color: #71809f;
-  font-size: 9px;
+  font-size: 12px;
   margin-bottom: 8px;
 }
 
@@ -260,8 +261,8 @@
 }
 
 .about-mini-avatars span {
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   margin-left: -5px;
   border: 2px solid white;
   border-radius: 50%;
@@ -269,7 +270,7 @@
   place-items: center;
   color: white;
   background: linear-gradient(145deg, #879bc7, #344c7f);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 800;
 }
 
@@ -292,7 +293,7 @@
 .about-trust-row strong {
   display: block;
   color: #162b62;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -300,7 +301,7 @@
   display: block;
   margin-top: 3px;
   color: #7887a6;
-  font-size: 8px;
+  font-size: 15px;
 }
 
 .about-hero-image {
@@ -379,11 +380,11 @@
   width: min(1240px, calc(100% - 80px));
   min-height: 78px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 12px 30px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   background: rgba(255, 255, 255, 0.97);
   border: 1px solid #e9edf4;
   border-radius: 16px;
@@ -394,7 +395,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 10px;
   min-width: 0;
 }
 
@@ -435,13 +436,13 @@
 
 .about-group strong {
   color: #25365e;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .about-group span {
-  margin-top: 3px;
+  margin-top: 2px;
   color: #8b96ad;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /* =========================
@@ -849,8 +850,15 @@
   font-size: 12px;
 }
 
+/* =========================
+   GLOBAL JAIN NETWORK
+   Updated map layout
+========================= */
+
 .network-card {
   position: relative;
+  min-width: 0;
+  min-height: 268px;
   padding: 23px;
   overflow: hidden;
 }
@@ -860,139 +868,108 @@
   z-index: 4;
 }
 
+.network-heading h2 {
+  margin: 0;
+  color: #142657;
+  font-size: 20px;
+}
+
+.network-heading p {
+  margin: 5px 0 0;
+  color: #7f8ba5;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Image and country list sit side by side. */
 .network-map {
   position: absolute;
-  left: 30px;
-  right: 400px;
-  top: 50px;
+  left: 22px;
+  right: 150px;
+  top: 62px;
   bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-/*
-  Lightweight dotted world-map silhouette.
-  It keeps the same pale map-outline feeling
-  as the supplied reference without adding
-  another large external map dependency.
-*/
+.network-map-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.network-map-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.9;
+}
+
+/* Keep legacy decorative map shapes hidden when the image is used. */
 .map-continent {
-  position: absolute;
-  background:
-    radial-gradient(circle, #dce5f3 1px, transparent 1.5px);
-  background-size: 10px 10px;
-  opacity: 0;
-  filter: blur(0.05px);
+  display: none;
 }
-
-.map-north {
-  width: 145px;
-  height: 70px;
-  left: 7%;
-  top: 12%;
-  border-radius: 58% 42% 48% 38%;
-  transform: rotate(-13deg);
-}
-
-.map-south {
-  width: 65px;
-  height: 95px;
-  left: 22%;
-  top: 48%;
-  border-radius: 46% 54% 60% 40%;
-  transform: rotate(14deg);
-}
-
-.map-europe {
-  width: 68px;
-  height: 42px;
-  left: 42%;
-  top: 19%;
-  border-radius: 58% 42% 40% 50%;
-  transform: rotate(-9deg);
-}
-
-.map-africa {
-  width: 78px;
-  height: 105px;
-  left: 45%;
-  top: 39%;
-  border-radius: 44% 52% 55% 48%;
-  transform: rotate(12deg);
-}
-
-.map-asia {
-  width: 180px;
-  height: 88px;
-  left: 52%;
-  top: 17%;
-  border-radius: 44% 57% 47% 53%;
-  transform: rotate(9deg);
-}
-
-.map-australia {
-  width: 65px;
-  height: 40px;
-  right: 2%;
-  bottom: 12%;
-  border-radius: 50%;
-  transform: rotate(10deg);
-}
-
-
-
 
 .map-dots {
   position: absolute;
   z-index: 5;
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #ffffff;
   border-radius: 50%;
-  border: 3px solid white;
   box-shadow: 0 2px 7px rgba(21, 43, 92, 0.2);
 }
 
 .map-dot-one {
-  left: 22%;
-  top: 35%;
+  left: 30%;
+  top: 24%;
   background: #23b36c;
 }
 
 .map-dot-two {
-  left: 40%;
+  left: 39%;
   top: 25%;
   background: #ee5664;
 }
 
 .map-dot-three {
-  left: 67%;
-  top: 25%;
+  left: 70%;
+  top: 23%;
   background: #2e70df;
 }
 
 .map-dot-four {
   left: 51%;
-  top: 52%;
+  top: 69%;
   background: #f2a31a;
 }
 
 .map-dot-five {
-  left: 74%;
-  top: 58%;
+  left: 67%;
+  top: 65%;
   background: #f2a31a;
 }
 
 .map-dot-six {
-  left: 25%;
-  top: 60%;
+  left: 36%;
+  top: 53%;
   background: #ee5664;
 }
 
 .country-network-list {
   position: absolute;
-  top: 10px;
-  right: -29px;
-  width: 100px;
+  top: 66px;
+  right: 120px;
+  z-index: 6;
+  width: 105px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1011,42 +988,26 @@
 .country-dot {
   width: 5px;
   height: 5px;
+  flex: 0 0 5px;
   border-radius: 50%;
   background: #1c9c5b;
 }
 
-.country-2 {
-  background: #315fd4;
-}
-
-.country-3 {
-  background: #315fd4;
-}
-
-.country-4 {
-  background: #315fd4;
-}
-
-.country-5 {
-  background: #315fd4;
-}
-
-.country-6 {
-  background: #315fd4;
-}
-
-.country-7 {
-  background: #315fd4;
-}
-
+.country-2,
+.country-3,
+.country-4,
+.country-5,
+.country-6,
+.country-7,
 .country-8 {
   background: #315fd4;
 }
 
 .many-more {
   position: absolute;
-  right: 18px;
-  bottom: 10px;
+  right: 150px;
+  bottom: 30px;
+  z-index: 6;
   color: #8b95a9;
   font-size: 12px;
 }
@@ -1057,7 +1018,7 @@
 
 .roadmap-section {
   padding-top: 32px;
-  padding-bottom: 28px;
+  padding-bottom: 50px;
 }
 
 .roadmap-grid {
@@ -1132,7 +1093,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 9px;
+  padding-top: 15px;
   border-top: 1px solid #f0f2f6;
 }
 
@@ -1163,8 +1124,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 19px 26px 19px 42px;
-  border-radius: 13px;
+  padding: 19px 30px 19px 46px;
+  border-radius: 15px;
   background:
     radial-gradient(circle at 72% 50%, rgba(66, 105, 188, 0.42), transparent 27%),
     linear-gradient(105deg, #092457, #122f72 62%, #0b255a);
@@ -1179,25 +1140,72 @@
 .joining-content h2 {
   margin: 0;
   font-size: 20px;
-  line-height: 1.35;
+  line-height: 1.45;
   letter-spacing: -0.3px;
 }
 
 .joining-content p {
   margin: 4px 0 0;
   color: #b8c7e7;
-  font-size: 15px;
+  font-size: 14px;
 }
+
 
 .joining-hands {
   position: absolute;
   right: 190px;
   top: 0;
-  width: 220px;
+  width: 400px;
   height: 100%;
   display: grid;
   place-items: center;
-  opacity: 0.72;
+  opacity: 1;
+}
+
+/* Soft glow behind the image */
+.hands-glow {
+  position: absolute;
+  width: 200px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+}
+
+/* Keep the hands image fully visible */
+.hands-symbol {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+
+.joining-hand-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+
+  /* Fade only the left and right edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 82%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 82%,
+    transparent 100%
+  );
 }
 
 .hands-glow {
@@ -1217,14 +1225,14 @@
   z-index: 2;
   font-size: 58px;
   filter: grayscale(0.15);
-  opacity: 0.78;
+  opacity: 1;
 }
 
 .joining-button {
   position: relative;
   z-index: 5;
   min-height: 34px;
-  padding: 0 15px;
+  padding: 0 20px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 8px;
   color: white;
@@ -1426,6 +1434,16 @@
   .foundation-network {
     grid-template-columns: 35% 65%;
   }
+
+  .network-map {
+    right: 125px;
+    left: 18px;
+  }
+
+  .country-network-list {
+    right: 12px;
+    width: 94px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -1531,6 +1549,19 @@
     min-height: 300px;
   }
 
+  .network-map {
+    left: 22px;
+    right: 150px;
+    top: 62px;
+    bottom: 10px;
+  }
+
+  .country-network-list {
+    top: 66px;
+    right: 20px;
+    width: 105px;
+  }
+
   .roadmap-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1620,22 +1651,34 @@
     padding: 20px;
   }
 
+  .network-card {
+    min-height: 270px;
+    padding: 18px;
+  }
+
   .network-map {
-    right: 10px;
-    bottom: 15px;
+    left: 10px;
+    right: 105px;
+    top: 65px;
+    bottom: 12px;
   }
 
   .country-network-list {
-    right: 10px;
-    width: 90px;
+    top: 66px;
+    right: 8px;
+    width: 88px;
   }
 
   .country-network-list li {
-    font-size: 7px;
+    gap: 5px;
+    margin-bottom: 7px;
+    font-size: 9px;
   }
 
   .many-more {
-    right: 10px;
+    right: 8px;
+    bottom: 10px;
+    font-size: 9px;
   }
 
   .roadmap-grid {

@@ -603,6 +603,13 @@ function Resources() {
           </div>
         </div>
       </footer>
+      <button
+        className="about-back-top"
+        aria-label="Back to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        ↑
+      </button>
     </div>
   );
 }

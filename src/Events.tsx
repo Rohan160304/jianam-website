@@ -647,6 +647,14 @@ export default function Event() {
 
       {/* FOOTER IS INTENTIONALLY NOT INCLUDED HERE.
           Keep your existing navbar and footer unchanged. */}
+
+          <button
+        className="about-back-top"
+        aria-label="Back to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        ↑
+      </button>
     </main>
   );
 }

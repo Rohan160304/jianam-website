@@ -1,4 +1,5 @@
-﻿import {
+﻿
+import {
   ArrowRight,
   Building2,
   CheckCircle2,
@@ -194,14 +195,18 @@ const countries = [
   "Africa",
 ];
 
-
+/* =========================================================
+   ABOUT HERO
+   ========================================================= */
 
 function AboutHero() {
   return (
     <section className="about-hero">
       <div className="about-hero-inner">
         <div className="about-hero-copy">
-          <span className="about-eyebrow">ABOUT JINANAM FOUNDATION</span>
+          <span className="about-eyebrow">
+            ABOUT JINANAM FOUNDATION
+          </span>
 
           <h1>
             Building the Future
@@ -230,9 +235,9 @@ function AboutHero() {
 
             <button
               className="about-button about-outline-button about-large-button"
-              onClick={() =>
-                (window.location.href = "/#features")
-              }
+              onClick={() => {
+                window.location.href = "/#features";
+              }}
             >
               Explore Platform
               <ArrowRight size={17} />
@@ -276,6 +281,10 @@ function AboutHero() {
   );
 }
 
+/* =========================================================
+   COMMUNITY GROUPS
+   ========================================================= */
+
 function CommunityGroups() {
   return (
     <section className="about-groups">
@@ -297,6 +306,10 @@ function CommunityGroups() {
   );
 }
 
+/* =========================================================
+   MISSION, VISION AND VALUES
+   ========================================================= */
+
 function MissionVisionValues() {
   return (
     <section className="about-section about-mvv" id="mission">
@@ -309,9 +322,9 @@ function MissionVisionValues() {
 
         <p>
           To create a unified digital platform that connects Jain
-          individuals, families, temples, monks, organizations, and communities
-          worldwide â€” preserving our heritage while empowering future
-          generations.
+          individuals, families, temples, monks, organizations, and
+          communities worldwide — preserving our heritage while empowering
+          future generations.
         </p>
 
         <a href="#journey">
@@ -374,6 +387,10 @@ function MissionVisionValues() {
   );
 }
 
+/* =========================================================
+   OUR JOURNEY
+   ========================================================= */
+
 function Journey() {
   return (
     <section className="about-section journey-section" id="journey">
@@ -387,7 +404,10 @@ function Journey() {
 
         {journey.map(
           ({ year, title, description, icon: Icon, color }, index) => (
-            <article className="journey-item" key={`${title}-${index}`}>
+            <article
+              className="journey-item"
+              key={`${title}-${index}`}
+            >
               <div className={`journey-icon ${color}`}>
                 <Icon size={25} />
               </div>
@@ -403,6 +423,10 @@ function Journey() {
     </section>
   );
 }
+
+/* =========================================================
+   COMMUNITY IMPACT
+   ========================================================= */
 
 function CommunityImpact() {
   return (
@@ -430,9 +454,14 @@ function CommunityImpact() {
   );
 }
 
+/* =========================================================
+   FOUNDATION TEAM AND GLOBAL NETWORK
+   ========================================================= */
+
 function FoundationNetwork() {
   return (
     <section className="about-section foundation-network">
+      {/* Foundation team card */}
       <div className="foundation-card">
         <h2>Meet the Foundation</h2>
 
@@ -465,12 +494,15 @@ function FoundationNetwork() {
 
         <button
           className="about-button about-primary-button foundation-button"
-          onClick={() => (window.location.href = "/#contact")}
+          onClick={() => {
+            window.location.href = "/#contact";
+          }}
         >
           Our Team <ArrowRight size={15} />
         </button>
       </div>
 
+      {/* Global Jain Network card */}
       <div className="network-card">
         <div className="network-heading">
           <h2>Global Jain Network</h2>
@@ -479,28 +511,28 @@ function FoundationNetwork() {
 
         <div className="network-map">
           <div className="network-map-inner">
-          <img
-            src="/images/g.jpg"
-            alt="World map outline showing the global Jain network"
-            className="network-map-image"
-          />
+            <img
+              src="/images/g.jpg"
+              alt="World map outline showing the global Jain network"
+              className="network-map-image"
+            />
 
-        <div className="network-map">
-          <div className="map-dots map-dot-one" />
-          <div className="map-dots map-dot-two" />
-          <div className="map-dots map-dot-three" />
-          <div className="map-dots map-dot-four" />
-          <div className="map-dots map-dot-five" />
-          <div className="map-dots map-dot-six" />
+            <div className="map-dots map-dot-one" />
+            <div className="map-dots map-dot-two" />
+            <div className="map-dots map-dot-three" />
+            <div className="map-dots map-dot-four" />
+            <div className="map-dots map-dot-five" />
+            <div className="map-dots map-dot-six" />
 
-          <div className="map-continent map-north" />
-          <div className="map-continent map-south" />
-          <div className="map-continent map-europe" />
-          <div className="map-continent map-africa" />
-          <div className="map-continent map-asia" />
-          <div className="map-continent map-australia" />
+            <div className="map-continent map-north" />
+            <div className="map-continent map-south" />
+            <div className="map-continent map-europe" />
+            <div className="map-continent map-africa" />
+            <div className="map-continent map-asia" />
+            <div className="map-continent map-australia" />
+          </div>
         </div>
-      </div>
+
         <ul className="country-network-list">
           {countries.map((country, index) => (
             <li key={country}>
@@ -512,17 +544,22 @@ function FoundationNetwork() {
 
         <span className="many-more">And many more...</span>
       </div>
-      </div>
     </section>
   );
 }
+
+/* =========================================================
+   FUTURE ROADMAP
+   ========================================================= */
 
 function Roadmap() {
   return (
     <section className="about-section roadmap-section">
       <div className="about-section-heading">
         <h2>Future Roadmap</h2>
-        <p>Building the future with innovation, inclusivity and integrity.</p>
+        <p>
+          Building the future with innovation, inclusivity and integrity.
+        </p>
       </div>
 
       <div className="roadmap-grid">
@@ -548,9 +585,12 @@ function Roadmap() {
 
               <div className="roadmap-bottom">
                 <span>{years}</span>
+
                 <CheckCircle2
                   size={15}
-                  className={completed ? "roadmap-check" : "roadmap-future"}
+                  className={
+                    completed ? "roadmap-check" : "roadmap-future"
+                  }
                 />
               </div>
             </article>
@@ -560,6 +600,10 @@ function Roadmap() {
     </section>
   );
 }
+
+/* =========================================================
+   JOINING HANDS BANNER
+   ========================================================= */
 
 function JoiningHandsBanner() {
   return (
@@ -576,12 +620,18 @@ function JoiningHandsBanner() {
 
       <div className="joining-hands">
         <div className="hands-glow" />
-        <div className="hands-symbol">ðŸ™</div>
+        <div className="hands-symbol"><img
+              src="/images/joining hands.png"
+              alt="World map outline showing the global Jain network"
+              className="joining-hand-image"
+            /></div>
       </div>
 
       <button
         className="about-button joining-button"
-        onClick={() => (window.location.href = "/#contact")}
+        onClick={() => {
+          window.location.href = "/#contact";
+        }}
       >
         Join Us Today
         <ArrowRight size={15} />
@@ -590,13 +640,13 @@ function JoiningHandsBanner() {
   );
 }
 
-
+/* =========================================================
+   ABOUT US PAGE
+   ========================================================= */
 
 export default function AboutUs() {
   return (
     <div className="about-page">
-      
-
       <main>
         <AboutHero />
         <CommunityGroups />
@@ -608,14 +658,17 @@ export default function AboutUs() {
         <JoiningHandsBanner />
       </main>
 
-      
-
       <button
         className="about-back-top"
         aria-label="Back to top"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
       >
-        â†‘
+        ↑
       </button>
     </div>
   );
