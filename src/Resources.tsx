@@ -346,23 +346,7 @@ function Resources() {
           <img
             src="/images/main image.png"
             alt="Jain Knowledge and Resources"
-          />
-
-          <div className="hero-floating-icon hero-icon-music">
-            <Music size={19} />
-          </div>
-
-          <div className="hero-floating-icon hero-icon-video">
-            <Play size={18} />
-          </div>
-
-          <div className="hero-floating-icon hero-icon-download">
-            <Download size={18} />
-          </div>
-
-          <div className="hero-floating-icon hero-icon-book">
-            <BookOpen size={18} />
-          </div>
+          />  
         </div>
       </section>
 
