@@ -22,7 +22,7 @@
 }
 
 .contact-hero {
-  padding: 68px 0 76px;
+  padding: 68px 0 30px;
   background:
     radial-gradient(ellipse at 10% 15%, #fff0dc 0, transparent 36%),
     linear-gradient(115deg, #f4faff 0%, #ffffff 65%, #eff9ff 100%);
@@ -94,7 +94,7 @@
 }
 
 .contact-hero-copy {
-  padding: 14px 0;
+  padding: 10px 0;
 }
 
 .contact-eyebrow {
@@ -102,7 +102,7 @@
   align-items: center;
   gap: 10px;
   color: #226fc7;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 2px;
   line-height: 1.6;
@@ -117,7 +117,7 @@
 }
 
 .contact-hero-copy h1 {
-  margin: 23px 0 20px;
+  margin: 20px 0 20px;
   color: var(--contact-navy);
   font-size: clamp(37px, 4.2vw, 57px);
   font-weight: 800;
@@ -191,15 +191,15 @@
 }
 
 .contact-form-section {
-  padding-top: 30px;
+  padding-top: 35px;
   padding-bottom: 50px;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 70px;
 }
 
 .contact-form-heading,
 .contact-details-heading {
   max-width: 650px;
-  margin: 0 auto 43px;
+  margin: 0 auto 30px;
   text-align: center;
 }
 
@@ -386,12 +386,12 @@
 }
 
 .contact-details-section {
-  padding: 82px 0 86px;
+  padding: 30px 0 50px;
   background: #f8fafc;
 }
 
 .contact-details-heading {
-  margin-bottom: 42px;
+  margin-bottom: 5px;
 }
 
 .contact-details-grid {
@@ -511,8 +511,8 @@
 }
 
 .contact-map-section {
-  padding-top: 88px;
-  padding-bottom: 88px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .contact-map-heading {
@@ -570,7 +570,7 @@
 }
 
 .contact-impact-section {
-  padding: 78px 0;
+  padding: 40px 0;
   background:
     radial-gradient(ellipse at 85% 10%, #d0eaff 0, transparent 30%),
     linear-gradient(110deg, #edf3ff, #f5fcff 60%, #e5f6fe);
