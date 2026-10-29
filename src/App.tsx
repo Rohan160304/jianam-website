@@ -8,7 +8,6 @@ import ContactPage from "./Contact";
 import LoginPage from "./Login";
 import Signup from "./Signup";
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUpRight,
   BookOpen,
