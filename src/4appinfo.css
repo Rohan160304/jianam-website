@@ -1,0 +1,657 @@
+
+/* =========================================
+   JINANAM FOUR APPS INFORMATION PAGE
+========================================= */
+
+.four-app-page {
+  width: 100%;
+  overflow: hidden;
+  background: #f8faff;
+  color: #14213d;
+}
+
+.four-app-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.four-app-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 510px;
+  padding: 85px 0;
+  overflow: hidden;
+  background: linear-gradient(125deg, #101e43 0%, #18366d 55%, #2357a1 100%);
+  color: #fff;
+}
+
+.four-app-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.four-app-glow-one {
+  width: 450px;
+  height: 450px;
+  top: -230px;
+  right: -70px;
+  background: #70a5ff20;
+}
+
+.four-app-glow-two {
+  width: 350px;
+  height: 350px;
+  bottom: -230px;
+  left: 12%;
+  background: #e5ad4b20;
+}
+
+.four-app-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+}
+
+.four-app-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 25px;
+  color: #f0c66e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.four-app-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(37px, 5.4vw, 66px);
+  font-weight: 850;
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.four-app-hero h1 span {
+  display: block;
+  color: #f2c76e;
+}
+
+.four-app-hero-content > p {
+  max-width: 690px;
+  margin: 23px auto 28px;
+  color: #d5e0f5;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.four-app-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 50px;
+  background: #f0bf5d;
+  color: #15284b;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.four-app-hero-button:hover {
+  transform: translateY(-3px);
+  background: #ffd781;
+}
+
+.four-app-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 34px;
+  text-align: left;
+}
+
+.four-app-count > span {
+  color: #f2c76e;
+  font-family: "Manrope", sans-serif;
+  font-size: 37px;
+  font-weight: 900;
+}
+
+.four-app-count div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.four-app-count strong {
+  color: #fff;
+  font-size: 13px;
+}
+
+.four-app-count small {
+  color: #b9c9e5;
+  font-size: 11px;
+}
+
+/* INTRODUCTION */
+
+.four-app-intro {
+  padding: 85px 0 95px;
+}
+
+.four-app-section-heading {
+  max-width: 700px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.four-app-section-label {
+  color: #bd8a31;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.four-app-section-heading h2 {
+  margin: 14px 0;
+  color: #152344;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.four-app-section-heading h2 span {
+  color: #2861bb;
+}
+
+.four-app-section-heading > p {
+  margin: 0;
+  color: #687793;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* APP CARDS */
+
+.four-app-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.four-app-card {
+  position: relative;
+  padding: 32px;
+  border: 1px solid #e6ebf4;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 10px 35px #172c590a;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  scroll-margin-top: 30px;
+}
+
+.four-app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px #172c5914;
+}
+
+.four-app-card-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #edf0f6;
+}
+
+.four-app-logo-wrap {
+  display: grid;
+  place-items: center;
+  flex: 0 0 110px;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  border: 1px solid #edf0f6;
+  border-radius: 22px;
+  background: #f8faff;
+}
+
+.four-app-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  object-fit: contain;
+}
+
+.four-app-card-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.four-app-number {
+  color: #b18a43;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.8px;
+}
+
+.four-app-card-heading h3 {
+  margin: 7px 0 5px;
+  color: #172748;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(23px, 3vw, 31px);
+  font-weight: 850;
+}
+
+.four-app-card-heading h4 {
+  margin: 0;
+  color: #61718f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.four-app-main-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #edf3ff;
+  color: #2861bb;
+}
+
+.four-app-admin .four-app-main-icon {
+  background: #fff4e7;
+  color: #df8d25;
+}
+
+.four-app-tracking .four-app-main-icon {
+  background: #e9f8f0;
+  color: #24975a;
+}
+
+.four-app-security .four-app-main-icon {
+  background: #f2edff;
+  color: #7955c6;
+}
+
+.four-app-description {
+  max-width: 1000px;
+  margin: 23px 0 27px;
+  color: #65738e;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.four-app-feature-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+  color: #253858;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+}
+
+.four-app-feature-line {
+  flex: 1;
+  height: 1px;
+  background: #e9edf4;
+}
+
+.four-app-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 28px;
+}
+
+.four-app-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.four-app-feature-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #edf3ff;
+  color: #2861bb;
+}
+
+.four-app-admin .four-app-feature-icon {
+  background: #fff4e7;
+  color: #df8d25;
+}
+
+.four-app-tracking .four-app-feature-icon {
+  background: #e9f8f0;
+  color: #24975a;
+}
+
+.four-app-security .four-app-feature-icon {
+  background: #f2edff;
+  color: #7955c6;
+}
+
+.four-app-feature h5 {
+  margin: 1px 0 5px;
+  color: #253858;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.four-app-feature p {
+  margin: 0;
+  color: #74819a;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.four-app-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #edf0f6;
+}
+
+.four-app-card-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #75829a;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.four-app-card-footer > span svg {
+  color: #28a46a;
+}
+
+.four-app-card-footer a {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #edf3ff;
+  color: #2861bb;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.four-app-card-footer a:hover {
+  transform: translateX(4px);
+}
+
+/* BOTTOM CTA */
+
+.four-app-bottom-cta {
+  padding: 75px 0;
+  background: linear-gradient(120deg, #14264e, #214d8d);
+  color: #fff;
+  text-align: center;
+}
+
+.four-app-bottom-cta .four-app-container {
+  max-width: 750px;
+}
+
+.four-app-cta-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 20px;
+  border: 1px solid #ffffff35;
+  border-radius: 18px;
+  background: #ffffff12;
+  color: #f4c66d;
+}
+
+.four-app-bottom-cta > div > span {
+  color: #f2c76e;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.four-app-bottom-cta h2 {
+  margin: 18px 0 14px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.four-app-bottom-cta h2 strong {
+  color: #f2c76e;
+}
+
+.four-app-bottom-cta p {
+  max-width: 620px;
+  margin: 0 auto 25px;
+  color: #c8d6ed;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.four-app-bottom-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 23px;
+  border-radius: 40px;
+  background: #f2c76e;
+  color: #172748;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.four-app-bottom-cta a:hover {
+  transform: translateY(-3px);
+}
+
+/* BACK TO TOP */
+
+.four-app-back-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  background: #1d4f91;
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  box-shadow: 0 5px 18px #172c5930;
+  transition: transform 0.2s ease;
+}
+
+.four-app-back-top:hover {
+  transform: translateY(-4px);
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .four-app-hero {
+    min-height: 450px;
+    padding: 70px 0;
+  }
+
+  .four-app-card {
+    padding: 24px;
+  }
+
+  .four-app-card-top {
+    gap: 16px;
+  }
+
+  .four-app-logo-wrap {
+    flex-basis: 88px;
+    width: 88px;
+    height: 88px;
+  }
+
+  .four-app-main-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .four-app-feature-grid {
+    gap: 18px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+  .four-app-container {
+    width: calc(100% - 32px);
+  }
+
+  .four-app-hero {
+    min-height: auto;
+    padding: 65px 0;
+  }
+
+  .four-app-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+
+  .four-app-hero h1 {
+    font-size: 36px;
+    letter-spacing: -1.2px;
+  }
+
+  .four-app-hero-content > p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .four-app-intro {
+    padding: 60px 0;
+  }
+
+  .four-app-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .four-app-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .four-app-section-heading > p {
+    font-size: 13px;
+  }
+
+  .four-app-list {
+    gap: 18px;
+  }
+
+  .four-app-card {
+    padding: 18px;
+    border-radius: 19px;
+  }
+
+  .four-app-card-top {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .four-app-logo-wrap {
+    grid-row: span 2;
+    flex-basis: 72px;
+    width: 72px;
+    height: 72px;
+    border-radius: 15px;
+  }
+
+  .four-app-card-heading h3 {
+    font-size: 21px;
+  }
+
+  .four-app-card-heading h4 {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .four-app-number {
+    font-size: 9px;
+  }
+
+  .four-app-main-icon {
+    display: none;
+  }
+
+  .four-app-description {
+    margin: 18px 0 22px;
+    font-size: 12px;
+  }
+
+  .four-app-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .four-app-feature h5 {
+    font-size: 12px;
+  }
+
+  .four-app-feature p {
+    font-size: 11px;
+  }
+
+  .four-app-bottom-cta {
+    padding: 60px 0;
+  }
+
+  .four-app-bottom-cta h2 {
+    font-size: 29px;
+  }
+
+  .four-app-bottom-cta p {
+    font-size: 12px;
+  }
+
+  .four-app-back-top {
+    right: 15px;
+    bottom: 15px;
+    width: 39px;
+    height: 39px;
+  }
+}

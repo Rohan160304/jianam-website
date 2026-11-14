@@ -1,163 +1,370 @@
-
 import {
-  ArrowRight,
-  Bell,
+  Users,
+  MapPin,
+  Landmark,
   BookOpen,
-  BriefcaseBusiness,
-  Building2,
-  CalendarDays,
-  CheckCircle2,
-  ChevronRight,
-  Compass,
-  GraduationCap,
   Heart,
   HeartHandshake,
-  Home,
-  Landmark,
-  MapPin,
-  MessageCircle,
-  Music2,
-  Play,
-  QrCode,
-  ShieldCheck,
-  Sparkles,
-  Users,
+  CalendarDays,
   Utensils,
+  ArrowRight,
+  Bell,
+  MessageCircle,
+  ChevronRight,
+  Sparkles,
+  Home,
+  Compass,
+  Route,
+  ShieldAlert,
+  Building2,
+  MapPinned,
+  Newspaper,
+  Vote,
+  Megaphone,
+  Armchair,
+  BedDouble,
+  BriefcaseBusiness,
+  CreditCard,
+  Gift,
+  ShieldCheck,
+  UserRound,
   Wallet,
   Waves,
+  Music,
+  Video,
+  Clock3,
 } from "lucide-react";
+
 import "./Features.css";
 
-const features = [
+const featureCategories = [
   {
-    title: "Monk Tracking",
+    category: "Monk & Sadhvi Management",
     description:
-      "Live location and travel updates of Jain monks for safety and seva.",
-    icon: MapPin,
-    color: "saffron",
+      "Stay connected with Jain monks and sadhvis through tracking, profiles and seva services.",
+    features: [
+      {
+        number: "01",
+        title: "Monk & Sadhvi Profiles",
+        description:
+          "Explore profiles and important information about Jain monks and sadhvis.",
+        icon: Users,
+        color: "saffron",
+      },
+      {
+        number: "02",
+        title: "Live Monk Tracking",
+        description:
+          "View live location and travel updates of Jain monks for safety and seva.",
+        icon: MapPin,
+        color: "blue",
+      },
+      {
+        number: "03",
+        title: "Vihar Seva",
+        description:
+          "Coordinate and support vihar seva activities for Jain monks and sadhvis.",
+        icon: HeartHandshake,
+        color: "green",
+      },
+      {
+        number: "04",
+        title: "99 Tour Tracking",
+        description:
+          "Follow important location and travel updates during 99 Yatra tours.",
+        icon: Route,
+        color: "orange",
+      },
+      {
+        number: "05",
+        title: "Monk SOS & Emergency Alerts",
+        description:
+          "Support emergency communication with alerts for authorized users.",
+        icon: ShieldAlert,
+        color: "pink",
+      },
+    ],
   },
   {
-    title: "Temple Management",
+    category: "Religious Places & Facilities",
     description:
-      "Manage temples, rituals, announcements, and daily activities.",
-    icon: Landmark,
-    color: "blue",
+      "Discover Jain religious places, facilities and essential services near you.",
+    features: [
+      {
+        number: "06",
+        title: "Temple Directory",
+        description:
+          "Discover Jain temples and access their important information.",
+        icon: Landmark,
+        color: "saffron",
+      },
+      {
+        number: "07",
+        title: "Dharamshala Directory",
+        description:
+          "Find dharamshalas and explore available accommodation facilities.",
+        icon: Building2,
+        color: "blue",
+      },
+      {
+        number: "08",
+        title: "Jain Centers",
+        description:
+          "Explore Jain centers and connect with local Jain organizations.",
+        icon: Users,
+        color: "green",
+      },
+      {
+        number: "09",
+        title: "Sthanak Directory",
+        description:
+          "Find Sthanaks and access their location and organization details.",
+        icon: Landmark,
+        color: "orange",
+      },
+      {
+        number: "10",
+        title: "Bhojanshala Directory",
+        description:
+          "Locate Jain bhojanshalas and find information about meal facilities.",
+        icon: Utensils,
+        color: "pink",
+      },
+      {
+        number: "11",
+        title: "Nearby Jain Places",
+        description:
+          "Discover nearby temples, dharamshalas and other Jain places.",
+        icon: MapPinned,
+        color: "purple",
+      },
+    ],
   },
   {
-    title: "Dharamshala",
-    description: "Find, manage and book dharamshala stays easily.",
-    icon: Building2,
-    color: "green",
+    category: "Community & Engagement",
+    description:
+      "Stay informed, participate in activities and connect with the Jain community.",
+    features: [
+      {
+        number: "12",
+        title: "Community Feed",
+        description:
+          "Stay updated with community posts, stories and shared information.",
+        icon: Newspaper,
+        color: "saffron",
+      },
+      {
+        number: "13",
+        title: "Community Pages",
+        description:
+          "Explore dedicated pages for Jain organizations and communities.",
+        icon: Users,
+        color: "blue",
+      },
+      {
+        number: "14",
+        title: "Polls",
+        description:
+          "Participate in community polls and share your opinions.",
+        icon: Vote,
+        color: "green",
+      },
+      {
+        number: "15",
+        title: "Announcements",
+        description:
+          "Receive important announcements and updates from organizations.",
+        icon: Megaphone,
+        color: "orange",
+      },
+      {
+        number: "16",
+        title: "News & Updates",
+        description:
+          "Stay informed about Jain community news and important updates.",
+        icon: Newspaper,
+        color: "pink",
+      },
+      {
+        number: "17",
+        title: "Events",
+        description:
+          "Discover upcoming religious, cultural and community events.",
+        icon: CalendarDays,
+        color: "purple",
+      },
+      {
+        number: "18",
+        title: "Tours & Yatras",
+        description:
+          "Explore spiritual tours and plan Jain pilgrimage journeys.",
+        icon: Route,
+        color: "blue",
+      },
+      {
+        number: "19",
+        title: "99 Tours",
+        description:
+          "Discover and follow organized 99 Yatra pilgrimage tours.",
+        icon: MapPin,
+        color: "saffron",
+      },
+    ],
   },
   {
-    title: "Bhojanshala",
-    description: "Locate bhojanshalas and seva meals in your area.",
-    icon: Utensils,
-    color: "orange",
+    category: "Seva & Community Management",
+    description:
+      "Make community operations easier through digital management and seva services.",
+    features: [
+      {
+        number: "20",
+        title: "Volunteer Management",
+        description:
+          "Connect volunteers with seva opportunities and manage participation.",
+        icon: HeartHandshake,
+        color: "green",
+      },
+      {
+        number: "21",
+        title: "Staff Management",
+        description:
+          "Manage staff members, responsibilities and organizational access.",
+        icon: BriefcaseBusiness,
+        color: "blue",
+      },
+      {
+        number: "22",
+        title: "Visitor Management",
+        description:
+          "Manage visitor entries, check-ins and check-outs at organizations.",
+        icon: UserRound,
+        color: "orange",
+      },
+      {
+        number: "23",
+        title: "Donations",
+        description:
+          "Support temples, community initiatives and seva causes through donations.",
+        icon: Wallet,
+        color: "saffron",
+      },
+      {
+        number: "24",
+        title: "Offers & Benefits",
+        description:
+          "Discover offers, benefits and services available within the community.",
+        icon: Gift,
+        color: "purple",
+      },
+    ],
   },
   {
-    title: "Community Feed",
-    description: "Stay updated with community news, updates and stories.",
-    icon: Users,
-    color: "purple",
-  },
-  {
-    title: "Events",
-    description: "Discover and participate in events happening near you.",
-    icon: CalendarDays,
-    color: "pink",
-  },
-  {
-    title: "Learning",
-    description: "Access Jain knowledge, scriptures, courses and more.",
-    icon: BookOpen,
-    color: "blue",
-  },
-  {
-    title: "Pathshala",
-    description: "A digital learning hub for kids and students of all ages.",
-    icon: GraduationCap,
-    color: "green",
-  },
-  {
-    title: "Jain Music",
-    description: "Enjoy devotional music, stotras, bhajans and spiritual podcasts.",
-    icon: Music2,
-    color: "orange",
-  },
-  {
-    title: "Reels",
-    description: "Explore short spiritual videos and inspirational content.",
-    icon: Play,
-    color: "pink",
-  },
-  {
-    title: "Volunteer",
-    description: "Connect with seva opportunities and volunteer with purpose.",
-    icon: HeartHandshake,
-    color: "green",
-  },
-  {
-    title: "Donations",
-    description: "Support temples, initiatives and causes with transparent giving.",
-    icon: Wallet,
-    color: "saffron",
-  },
-  {
-    title: "Jobs",
-    description: "Find job opportunities within the Jain community.",
-    icon: BriefcaseBusiness,
-    color: "blue",
-  },
-  {
-    title: "Property",
-    description: "Buy, sell or rent properties within the community.",
-    icon: Home,
-    color: "purple",
-  },
-  {
-    title: "Matrimony",
-    description: "A trusted Jain matrimonial platform for meaningful bonds.",
-    icon: Heart,
-    color: "pink",
-  },
-  {
-    title: "Nearby Derasar",
-    description: "Find nearby Derasars and get directions instantly.",
-    icon: Compass,
-    color: "orange",
-  },
-  {
-    title: "Community Chat",
-    description: "Connect in real time with community members.",
-    icon: MessageCircle,
-    color: "blue",
-  },
-  {
-    title: "Bookings",
-    description: "Book rooms, halls, facilities and seva services.",
-    icon: CheckCircle2,
-    color: "green",
-  },
-  {
-    title: "Digital Passes",
-    description: "Generate and manage digital passes for events and entry.",
-    icon: QrCode,
-    color: "purple",
-  },
-  {
-    title: "Pilgrimage",
-    description: "Explore and plan your sacred Jain yatra journeys.",
-    icon: Sparkles,
-    color: "saffron",
-  },
-  {
-    title: "Tours",
-    description: "Discover and book spiritual tours and group journeys.",
-    icon: Compass,
-    color: "green",
+    category: "Digital Services",
+    description:
+      "Access convenient digital services for bookings, identification and facilities.",
+    features: [
+      {
+        number: "25",
+        title: "Dharamshala Booking",
+        description:
+          "Submit booking requests and manage dharamshala accommodation.",
+        icon: BedDouble,
+        color: "blue",
+      },
+      {
+        number: "26",
+        title: "Digital ID Card",
+        description:
+          "Access your digital identification card through the platform.",
+        icon: CreditCard,
+        color: "green",
+      },
+      {
+        number: "27",
+        title: "Doli Booking",
+        description:
+          "Access doli booking services for pilgrimage and travel assistance.",
+        icon: Armchair,
+        color: "orange",
+      },
+    ],
   },
 ];
+
+
+const comingSoonCategories = [
+  {
+    category: "Spiritual Learning & Entertainment",
+    description:
+      "Explore upcoming digital experiences for spiritual learning, music and inspirational content.",
+    features: [
+      {
+        number: "01",
+        title: "Jain Learning",
+        description:
+          "Explore Jain teachings, educational resources and spiritual knowledge.",
+        icon: BookOpen,
+      },
+      {
+        number: "02",
+        title: "Jain Music",
+        description:
+          "Enjoy devotional music, Jain bhajans and spiritual audio content.",
+        icon: Music,
+      },
+      {
+        number: "03",
+        title: "Spiritual Reels",
+        description:
+          "Discover short videos featuring Jain values, teachings and inspiration.",
+        icon: Video,
+      },
+    ],
+  },
+  {
+    category: "Community & Lifestyle",
+    description:
+      "Discover upcoming services designed to support important aspects of community life.",
+    features: [
+      {
+        number: "04",
+        title: "Matrimony",
+        description:
+          "Connect with the Jain community to explore meaningful matrimonial connections.",
+        icon: Heart,
+      },
+      {
+        number: "05",
+        title: "Jobs & Careers",
+        description:
+          "Explore career opportunities and professional connections within the community.",
+        icon: BriefcaseBusiness,
+      },
+      {
+        number: "06",
+        title: "Property",
+        description:
+          "Discover property-related opportunities and services within the community.",
+        icon: Building2,
+      },
+    ],
+  },
+  {
+    category: "Spiritual Activities",
+    description:
+      "More spiritual activity services and experiences are planned for the platform.",
+    features: [
+      {
+        number: "07",
+        title: "Varshitap",
+        description:
+          "Access information and updates related to Varshitap spiritual activities.",
+        icon: Clock3,
+      },
+    ],
+  },
+];
+
 
 function PhoneMockup({
   variant,
@@ -167,8 +374,10 @@ function PhoneMockup({
   return (
     <div className={`feature-phone feature-phone-${variant}`}>
       <div className="phone-side-button phone-side-left" />
+
       <div className="phone-frame">
         <div className="phone-screen">
+          {/* Status Bar */}
           <div className="phone-status">
             <span>9:41</span>
             <span className="phone-status-icons">
@@ -179,6 +388,7 @@ function PhoneMockup({
 
           <div className="phone-island" />
 
+          {/* HOME SCREEN */}
           {variant === "home" && (
             <>
               <div className="phone-app-header">
@@ -190,9 +400,16 @@ function PhoneMockup({
               </div>
 
               <div className="phone-welcome-card">
-                <span className="phone-card-tag">YOUR JAIN COMMUNITY</span>
+                <span className="phone-card-tag">
+                  YOUR JAIN COMMUNITY
+                </span>
+
                 <h3>One community. Countless connections.</h3>
-                <p>Discover your community, wherever you are.</p>
+
+                <p>
+                  Discover your community, wherever you are.
+                </p>
+
                 <div className="phone-card-decoration">
                   <Landmark size={45} strokeWidth={1.2} />
                 </div>
@@ -210,18 +427,21 @@ function PhoneMockup({
                   </span>
                   <small>Monks</small>
                 </div>
+
                 <div>
                   <span className="shortcut-icon shortcut-blue">
                     <Landmark size={17} />
                   </span>
                   <small>Temples</small>
                 </div>
+
                 <div>
                   <span className="shortcut-icon shortcut-green">
                     <BookOpen size={17} />
                   </span>
                   <small>Learning</small>
                 </div>
+
                 <div>
                   <span className="shortcut-icon shortcut-pink">
                     <Heart size={17} />
@@ -230,12 +450,16 @@ function PhoneMockup({
                 </div>
               </div>
 
-              <div className="phone-mini-heading">Coming up</div>
+              <div className="phone-mini-heading">
+                Coming up
+              </div>
+
               <div className="phone-event-card">
                 <div className="phone-event-date">
                   <strong>18</strong>
                   <span>NOV</span>
                 </div>
+
                 <div>
                   <strong>Community Gathering</strong>
                   <small>Connect, learn and celebrate</small>
@@ -244,13 +468,17 @@ function PhoneMockup({
             </>
           )}
 
+          {/* COMMUNITY SCREEN */}
           {variant === "community" && (
             <>
               <div className="phone-app-header">
                 <div>
-                  <span className="phone-eyebrow">STAY CONNECTED</span>
+                  <span className="phone-eyebrow">
+                    STAY CONNECTED
+                  </span>
                   <h4>Community Feed</h4>
                 </div>
+
                 <span className="phone-round-icon">
                   <Bell size={16} />
                 </span>
@@ -259,62 +487,84 @@ function PhoneMockup({
               <div className="phone-feed-card">
                 <div className="phone-feed-user">
                   <span className="phone-feed-avatar">J</span>
+
                   <div>
                     <strong>Jain Community</strong>
                     <small>Community update · 2h ago</small>
                   </div>
                 </div>
+
                 <div className="phone-feed-art">
                   <div className="feed-art-sun" />
+
                   <Landmark size={64} strokeWidth={1.1} />
+
                   <span>FAITH · CULTURE · COMMUNITY</span>
                 </div>
+
                 <h4>Keeping our traditions alive</h4>
+
                 <p>
-                  Share meaningful moments, learn from one another and stay
-                  connected with your Jain community.
+                  Share meaningful moments, learn from one another
+                  and stay connected with your Jain community.
                 </p>
+
                 <div className="phone-feed-actions">
                   <span>
-                    <Heart size={14} /> Like
+                    <Heart size={14} />
+                    Like
                   </span>
+
                   <span>
-                    <MessageCircle size={14} /> Comment
+                    <MessageCircle size={14} />
+                    Comment
                   </span>
                 </div>
               </div>
 
-              <div className="phone-mini-heading">Discover more</div>
+              <div className="phone-mini-heading">
+                Discover more
+              </div>
+
               <div className="phone-community-row">
                 <span className="community-row-icon">
                   <CalendarDays size={18} />
                 </span>
+
                 <div>
                   <strong>Upcoming events</strong>
                   <small>Find gatherings near you</small>
                 </div>
+
                 <ChevronRight size={16} />
               </div>
+
               <div className="phone-community-row">
                 <span className="community-row-icon community-row-green">
                   <HeartHandshake size={18} />
                 </span>
+
                 <div>
                   <strong>Find seva opportunities</strong>
                   <small>Make a meaningful difference</small>
                 </div>
+
                 <ChevronRight size={16} />
               </div>
             </>
           )}
 
+          {/* SEVA SCREEN */}
           {variant === "seva" && (
             <>
               <div className="phone-app-header">
                 <div>
-                  <span className="phone-eyebrow">MAKE A DIFFERENCE</span>
+                  <span className="phone-eyebrow">
+                    MAKE A DIFFERENCE
+                  </span>
                   <h4>Seva & Giving</h4>
                 </div>
+
                 <span className="phone-avatar phone-avatar-green">
                   <HeartHandshake size={18} />
                 </span>
@@ -323,65 +573,97 @@ function PhoneMockup({
               <div className="phone-seva-card">
                 <div className="phone-seva-art">
                   <div className="seva-art-circle">
-                    <HeartHandshake size={46} strokeWidth={1.3} />
+                    <HeartHandshake
+                      size={46}
+                      strokeWidth={1.3}
+                    />
                   </div>
-                  <Sparkles className="seva-sparkle" size={20} />
+
+                  <Sparkles
+                    className="seva-sparkle"
+                    size={20}
+                  />
                 </div>
-                <span className="phone-card-tag">SMALL ACTS. BIG IMPACT.</span>
+
+                <span className="phone-card-tag">
+                  SMALL ACTS. BIG IMPACT.
+                </span>
+
                 <h3>Let your seva make a difference.</h3>
-                <p>Find ways to support the causes closest to your heart.</p>
+
+                <p>
+                  Find ways to support the causes closest to your
+                  heart.
+                </p>
+
                 <div className="phone-fake-button">
-                  Explore opportunities <ArrowRight size={14} />
+                  Explore opportunities
+                  <ArrowRight size={14} />
                 </div>
               </div>
 
-              <div className="phone-mini-heading">Ways to participate</div>
+              <div className="phone-mini-heading">
+                Ways to participate
+              </div>
+
               <div className="phone-seva-list">
                 <span className="seva-list-icon">
                   <Landmark size={18} />
                 </span>
+
                 <div>
                   <strong>Temple initiatives</strong>
                   <small>Support your local temple</small>
                 </div>
+
                 <ChevronRight size={16} />
               </div>
+
               <div className="phone-seva-list">
                 <span className="seva-list-icon seva-list-orange">
                   <Utensils size={18} />
                 </span>
+
                 <div>
                   <strong>Food & community seva</strong>
                   <small>Help serve those in need</small>
                 </div>
+
                 <ChevronRight size={16} />
               </div>
+
               <div className="phone-seva-list">
                 <span className="seva-list-icon seva-list-purple">
                   <BookOpen size={18} />
                 </span>
+
                 <div>
                   <strong>Education & learning</strong>
                   <small>Help knowledge reach everyone</small>
                 </div>
+
                 <ChevronRight size={16} />
               </div>
             </>
           )}
 
+          {/* BOTTOM NAVIGATION */}
           <div className="phone-bottom-nav">
             <span className="phone-nav-active">
               <Home size={15} />
               <small>Home</small>
             </span>
+
             <span>
               <Compass size={15} />
               <small>Explore</small>
             </span>
+
             <span>
               <Users size={15} />
               <small>Community</small>
             </span>
+
             <span>
               <Heart size={15} />
               <small>Profile</small>
@@ -389,6 +671,7 @@ function PhoneMockup({
           </div>
         </div>
       </div>
+
       <div className="phone-side-button phone-side-right" />
     </div>
   );
@@ -424,10 +707,6 @@ export default function Features() {
             empower every Jain.
           </p>
 
-          <a className="features-primary-button" href="#all-features">
-            Explore Features <ArrowRight size={17} />
-          </a>
-
           <div className="features-hero-note">
             <ShieldCheck size={16} />
             Built around community, culture and seva
@@ -441,70 +720,160 @@ export default function Features() {
         </div>
       </section>
 
+      {/* FEATURES CATALOG */}
       <section className="features-catalog" id="all-features">
         <div className="features-container">
-          <div className="features-section-heading">
-            <span className="features-section-label">THE JINANAM ECOSYSTEM</span>
-            <h2>
-              One community.
-              <br />
-              <span>Many ways to connect.</span>
-            </h2>
-            <p>
-              From spiritual learning to everyday community needs, find the
-              services that bring Jain life closer together.
-            </p>
-          </div>
+          
+<div className="features-section-heading">
+  <span className="features-section-label">
+    THE JINANAM ECOSYSTEM
+  </span>
 
-          <div className="features-grid">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
+  <h2>
+    One community.
+    <br />
+    <span>Many ways to connect.</span>
+  </h2>
 
-              return (
-                <article
-                  className="feature-card"
-                  key={feature.title}
-                  style={{ animationDelay: `${index * 35}ms` }}
-                >
-                  <div className={`feature-icon feature-icon-${feature.color}`}>
-                    <Icon size={24} strokeWidth={1.7} />
-                  </div>
+  <p>
+    From spiritual learning to everyday community needs, explore
+    services that bring Jain life closer together.
+  </p>
+</div>
 
-                  <span className="feature-card-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+{/* CURRENTLY AVAILABLE FEATURES */}
+<div className="features-status-heading">
+  <div>
+    <span className="features-status-label available-label">
+      <span className="status-dot" />
+      AVAILABLE NOW
+    </span>
 
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
+    <h2>Currently Available</h2>
 
-                  <a
-                    className="feature-learn-link"
-                    href="#platform"
-                    aria-label={`Learn more about ${feature.title}`}
-                  >
-                    Learn More <ArrowRight size={15} />
-                  </a>
-                </article>
-              );
-            })}
-          </div>
+    <p>
+      Explore the features and services currently available on JiNANAM.
+    </p>
+  </div>
 
-          <div className="features-more-card">
-            <div className="features-more-icon">
-              <Sparkles size={24} />
+  <span className="features-status-count">
+    27 Features
+  </span>
+</div>
+
+{featureCategories.map((cat) => (
+  <div className="feature-category" key={cat.category}>
+    <div className="feature-category-heading">
+      <div>
+        <h3>{cat.category}</h3>
+        <p>{cat.description}</p>
+      </div>
+
+      <span className="feature-category-count">
+        {String(cat.features.length).padStart(2, "0")} Features
+      </span>
+    </div>
+
+    <div className="features-grid">
+      {cat.features.map((feature) => {
+        const Icon = feature.icon;
+
+        return (
+          <article
+            className="feature-card"
+            key={feature.number}
+          >
+            <div
+              className={`feature-icon feature-icon-${feature.color}`}
+            >
+              <Icon size={24} strokeWidth={1.7} />
             </div>
-            <div>
-              <span className="features-section-label">ALWAYS GROWING</span>
-              <h3>And More</h3>
-              <p>Many more features are coming to serve you better.</p>
-            </div>
-            <a href="#platform" className="features-more-link">
-              Explore the platform <ArrowRight size={17} />
-            </a>
-          </div>
+
+            <span className="feature-card-number">
+              {feature.number}
+            </span>
+
+            <h3>{feature.title}</h3>
+            <p>{feature.description}</p>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+))}
+
+{/* COMING SOON FEATURES */}
+<div className="features-coming-soon-section">
+  <div className="features-status-heading">
+    <div>
+      <span className="features-status-label coming-soon-label">
+        <Clock3 size={14} />
+        COMING SOON
+      </span>
+
+      <h2>More Features on the Way</h2>
+
+      <p>
+        We are working on more experiences to make JiNANAM
+        even more useful for the Jain community.
+      </p>
+    </div>
+
+    <span className="features-status-count coming-soon-count">
+      07 Features
+    </span>
+  </div>
+
+  {comingSoonCategories.map((cat) => (
+    <div className="feature-category" key={cat.category}>
+      <div className="feature-category-heading">
+        <div>
+          <h3>{cat.category}</h3>
+          <p>{cat.description}</p>
         </div>
+
+        <span className="feature-category-count">
+          {String(cat.features.length).padStart(2, "0")} Features
+        </span>
+      </div>
+
+      <div className="features-grid">
+        {cat.features.map((feature) => {
+          const Icon = feature.icon;
+
+          return (
+            <article
+              className="feature-card feature-coming-soon-card"
+              key={feature.number}
+            >
+              <div className="feature-coming-soon-top">
+                <div className="feature-icon feature-icon-purple">
+                  <Icon size={24} strokeWidth={1.7} />
+                </div>
+
+                <span className="coming-soon-badge">
+                  <Clock3 size={12} />
+                  Coming Soon
+                </span>
+              </div>
+
+              <span className="feature-card-number">
+                {feature.number}
+              </span>
+
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  ))}
+</div>
+</div>
       </section>
 
+      {/* PLATFORM SECTION */}
       <section className="features-platform" id="platform">
         <div className="features-platform-decoration platform-decoration-one" />
         <div className="features-platform-decoration platform-decoration-two" />
@@ -516,9 +885,9 @@ export default function Features() {
             </span>
 
             <h2>
-              One Platform.
+              One Community.
               <br />
-              <span>Infinite Possibilities.</span>
+              <span>Many Possibilities.</span>
             </h2>
 
             <p className="platform-description">
@@ -533,7 +902,9 @@ export default function Features() {
                 </span>
                 <div>
                   <h4>Stay connected</h4>
-                  <p>Bring your community closer, wherever life takes you.</p>
+                  <p>
+                    Bring your community closer, wherever life takes you.
+                  </p>
                 </div>
               </div>
 
@@ -553,12 +924,17 @@ export default function Features() {
                 </span>
                 <div>
                   <h4>Preserve our heritage</h4>
-                  <p>Keep Jain knowledge, traditions and values thriving.</p>
+                  <p>
+                    Keep Jain knowledge, traditions and values thriving.
+                  </p>
                 </div>
               </div>
             </div>
 
-            <a className="features-primary-button platform-cta" href="#all-features">
+            <a
+              className="features-primary-button platform-cta"
+              href="/4appinfo"
+            >
               Explore Platform <ArrowRight size={17} />
             </a>
           </div>
@@ -568,12 +944,15 @@ export default function Features() {
             aria-label="Illustrative JiNANAM mobile app prototypes"
           >
             <div className="platform-phone-backdrop" />
+
             <div className="platform-phone platform-phone-left">
               <PhoneMockup variant="community" />
             </div>
+
             <div className="platform-phone platform-phone-center">
               <PhoneMockup variant="home" />
             </div>
+
             <div className="platform-phone platform-phone-right">
               <PhoneMockup variant="seva" />
             </div>
@@ -591,8 +970,10 @@ export default function Features() {
         </div>
       </section>
 
+      {/* FINAL CTA */}
       <section className="features-cta">
         <div className="features-cta-pattern" />
+
         <div className="features-container features-cta-content">
           <div className="features-cta-icon">
             <Waves size={25} />
@@ -619,6 +1000,7 @@ export default function Features() {
           <div className="features-cta-bottom-line" />
         </div>
       </section>
+
       <button
         className="about-back-top"
         aria-label="Back to top"

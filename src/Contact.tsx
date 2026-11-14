@@ -25,13 +25,13 @@ const contactDetails = [
   {
     icon: Phone,
     title: "Phone",
-    lines: ["+91 8693838281", "India"],
+    lines: ["+91 86938 38281", "+91 86938 38282", "India"],
     color: "blue",
   },
   {
     icon: Mail,
     title: "Email",
-    lines: ["Hello@jinanam.org", "We usually reply within 24 hours"],
+    lines: ["namo@jinanam.org", "support@jinanam.org", "We usually reply within 24 hours"],
     color: "green",
   },
   {
@@ -304,24 +304,6 @@ function ContactPage() {
                 </article>
               )
             )}
-          </div>
-
-          <div className="contact-website-strip">
-            <div className="contact-website-icon">
-              <Globe2 size={23} />
-            </div>
-            <div>
-              <strong>Visit our website</strong>
-              <p>Explore more about our community and initiatives.</p>
-            </div>
-            <a
-              href="https://www.jinanam.org"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Visit JiNANAM website"
-            >
-              www.JiNANAM.org <ArrowUpRight size={17} />
-            </a>
           </div>
         </div>
       </section>

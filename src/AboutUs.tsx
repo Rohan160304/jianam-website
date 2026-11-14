@@ -614,8 +614,6 @@ function JoiningHandsBanner() {
           <br />
           united and empowered Jain world.
         </h2>
-
-        <p>One Community. Infinite Possibilities.</p>
       </div>
 
       <div className="joining-hands">

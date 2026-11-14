@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import AboutUs from "./AboutUs";
 import FeaturesPage from "./Features";
+import FourAppInfo from "./4appinfo";
 import CommunityPage from "./community";
 import EventPage from "./Events";
 import Resources from "./Resources";
@@ -13,7 +14,6 @@ import {
   BookOpen,
   BriefcaseBusiness,
   CalendarDays,
-  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Globe2,
@@ -23,10 +23,8 @@ import {
   Mail,
   MapPin,
   Menu,
-  Moon,
   Music,
   ShieldCheck,
-  Sun,
   Users,
   X,
   Building2,
@@ -40,7 +38,12 @@ import {
   CircleUserRound,
   Search,
   Download,
-  Play,
+  Home,
+  Utensils,
+  UserRound,
+  UserPlus,
+  Megaphone,
+  Newspaper,
 } from "lucide-react";
 import "./App.css";
 
@@ -190,15 +193,15 @@ function navigateToPage(path: string) {
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
-  const [languageOpen, setLanguageOpen] = useState(false);
-  const [language, setLanguage] = useState("EN");
+  const [dark] = useState(false);
+  const [] = useState("EN");
 
   const currentPath = window.location.pathname;
 
   const isHomePage = currentPath === "/";
   const isAboutPage = currentPath === "/about";
   const isFeaturesPage = currentPath === "/features";
+  const isFourAppInfoPage = currentPath === "/4appinfo";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
   const isResourcesPage = currentPath === "/resources";
@@ -206,7 +209,6 @@ function Navbar() {
 
   const goTo = (item: string) => {
     setMenuOpen(false);
-    setLanguageOpen(false);
 
     const pageRoutes: Record<string, string> = {
       Home: "/",
@@ -311,45 +313,6 @@ function Navbar() {
             Admin Login
           </button>
 
-          <div className="language-wrap">
-            <button
-              className="icon-button language-button"
-              aria-label="Choose language"
-              aria-expanded={languageOpen}
-              onClick={() => setLanguageOpen(!languageOpen)}
-            >
-              <span>{language}</span>
-              <ChevronDown size={14} />
-            </button>
-
-            {languageOpen && (
-              <div className="language-menu">
-                {["EN", "HI", "MR"].map((lang) => (
-                  <button
-                    key={lang}
-                    onClick={() => {
-                      setLanguage(lang);
-                      setLanguageOpen(false);
-                    }}
-                  >
-                    {lang === "EN"
-                      ? "English"
-                      : lang === "HI"
-                        ? "Hindi"
-                        : "Marathi"}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <button
-            className="icon-button theme-button"
-            aria-label="Toggle color theme"
-            onClick={() => setDark(!dark)}
-          >
-            {dark ? <Sun size={19} /> : <Moon size={19} />}
-          </button>
 
           <button
             className="mobile-menu-button"
@@ -405,6 +368,7 @@ function EcosystemDiagram() {
   );
 }
 
+
 function Hero() {
   return (
     <section className="hero section-shell" id="home">
@@ -438,21 +402,21 @@ function Hero() {
           </a>
         </div>
 
-        <div className="trust-row">
-          <div className="avatar-stack" aria-hidden="true">
-            {["R", "J", "A", "M", "P"].map((letter, index) => (
-              <span key={letter} className={`avatar avatar-${index + 1}`}>
-                {letter}
-              </span>
-            ))}
+        {/* Community Trust */}
+        <div className="hero-trust">
+          <div className="hero-avatars">
+            <div className="hero-avatar avatar-1">R</div>
+            <div className="hero-avatar avatar-2">J</div>
+            <div className="hero-avatar avatar-3">A</div>
+            <div className="hero-avatar avatar-4">M</div>
+            <div className="hero-avatar avatar-5">P</div>
           </div>
 
-          <div>
+          <div className="hero-trust-info">
             <strong>5M+</strong>
             <span>Happy Users</span>
+            <small>Trusted by Jain families worldwide</small>
           </div>
-
-          <p>Trusted by Jain families worldwide</p>
         </div>
       </div>
 
@@ -464,53 +428,70 @@ function Hero() {
   );
 }
 
+
+
+
 function Statistics() {
-  const stats = [
+  const sections = [
     {
-      number: "5M+",
-      label: "Global Jain Community",
-      icon: Users,
-      color: "blue",
+      title: "Organisations",
+      stats: [
+        { number: "10,000+", label: "Temples", icon: Landmark, color: "blue" },
+        { number: "2,500+", label: "Dharamshala", icon: Building2, color: "orange" },
+        { number: "1,200+", label: "Sthanaks", icon: MapPin, color: "green" },
+        { number: "800+", label: "Jain Center", icon: Home, color: "gold" },
+        { number: "1,500+", label: "Bhojanshala", icon: Utensils, color: "blue" },
+      ],
     },
     {
-      number: "10,000+",
-      label: "Temples & Tirths",
-      icon: Landmark,
-      color: "orange",
+      title: "Users",
+      stats: [
+        { number: "5,000+", label: "MS", icon: Users, color: "orange" },
+        { number: "5M+", label: "Jain Members", icon: UserRound, color: "green" },
+        { number: "250K+", label: "Non-Jain Members", icon: UserPlus, color: "gold" },
+      ],
     },
     {
-      number: "1000+",
-      label: "Community Organizations",
-      icon: Users,
-      color: "green",
-    },
-    {
-      number: "∞",
-      label: "Infinite Possibilities",
-      icon: Globe2,
-      color: "gold",
+      title: "Community",
+      stats: [
+        { number: "1,000+", label: "Community Pages", icon: Globe2, color: "blue" },
+        { number: "2,500+", label: "Events", icon: CalendarDays, color: "orange" },
+        { number: "5,000+", label: "Announcements", icon: Megaphone, color: "green" },
+        { number: "3,000+", label: "News", icon: Newspaper, color: "gold" },
+      ],
     },
   ];
 
   return (
     <section
-      className="stats-bar section-shell"
-      aria-label="JiNANAM at a glance"
+      className="stats-section section-shell"
+      aria-label="JiNANAM platform statistics"
     >
-      {stats.map(({ number, label, icon: Icon, color }) => (
-        <div className="stat-card" key={label}>
-          <div className={`stat-icon ${color}`}>
-            <Icon size={26} />
-          </div>
-          <div>
-            <strong>{number}</strong>
-            <span>{label}</span>
+      {sections.map((section) => (
+        <div className="stats-group" key={section.title}>
+          <h2 className="stats-group-title">{section.title}</h2>
+
+          <div className="stats-bar">
+            {section.stats.map(({ number, label, icon: Icon, color }) => (
+              <div className="stat-card" key={label}>
+                <div className={`stat-icon ${color}`}>
+                  <Icon size={26} />
+                </div>
+
+                <div className="stat-info">
+                  <strong>{number}</strong>
+                  <span>{label}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       ))}
     </section>
   );
 }
+
+
 
 function SectionHeading({
   eyebrow,
@@ -637,44 +618,6 @@ function WhyJinANAM() {
   );
 }
 
-function WorldMap() {
-  const pins = [
-    { label: "North America", className: "pin-one" },
-    { label: "USA", className: "pin-two" },
-    { label: "Europe", className: "pin-three" },
-    { label: "India", className: "pin-four" },
-    { label: "Africa", className: "pin-five" },
-    { label: "Australia", className: "pin-six" },
-    { label: "Asia", className: "pin-seven" },
-  ];
-
-  return (
-    <div
-      className="map-visual"
-      aria-label="Illustration of Jain communities around the world"
-    >
-      <img
-        src="/images/g.jpg"
-        alt="World map illustrating the global Jain community"
-      />
-      <div className="map-overlay">
-        {pins.map((pin) => (
-          <span
-            key={pin.label}
-            className={`map-pin ${pin.className}`}
-            title={pin.label}
-          >
-            <MapPin size={23} fill="currentColor" />
-          </span>
-        ))}
-      </div>
-      <div className="map-label">
-        <Globe2 size={16} />
-        One community, across the world
-      </div>
-    </div>
-  );
-}
 
 function HomeCommunity() {
   const countries = [
@@ -693,21 +636,34 @@ function HomeCommunity() {
       className="community-section section-shell section-block"
       id="community"
     >
-      <div className="community-intro">
-        <span className="section-eyebrow">CONNECTED WORLDWIDE</span>
+      <div className="community-content">
+        <span className="section-eyebrow">
+          CONNECTED WORLDWIDE
+        </span>
+
         <h2>
-          A Global Ecosystem
+          One Community.
           <br />
-          United in Faith
+          Connected Across the Globe.
         </h2>
-        <p>JiNANAM connects Jain communities across the globe.</p>
-        <ul className="country-list">
+
+        <p className="community-description">
+          JiNANAM brings Jain families, temples, monks, and
+          organizations together from around the world,
+          creating a connected global community rooted in
+          faith, culture, and shared values.
+        </p>
+
+        <div className="country-list">
           {countries.map((country) => (
-            <li key={country}>{country}</li>
+            <span className="country-item" key={country}>
+              {country}
+            </span>
           ))}
-        </ul>
+        </div>
+
         <a
-          className="button button-primary"
+          className="button button-primary community-button"
           href="/community"
           onClick={(event) => {
             event.preventDefault();
@@ -717,10 +673,10 @@ function HomeCommunity() {
           Explore Communities <ArrowRight size={17} />
         </a>
       </div>
-      <WorldMap />
     </section>
   );
 }
+
 
 function Testimonials() {
   const [active, setActive] = useState(0);
@@ -907,29 +863,41 @@ function DownloadSection() {
         </p>
 
         <div className="store-buttons">
-          <a
-            href="#download"
-            onClick={(event) => event.preventDefault()}
-            className="store-button"
-          >
-            <Play size={24} fill="currentColor" />
-            <span>
-              <small>GET IT ON</small>
-              <strong>Google Play</strong>
-            </span>
-          </a>
+          
+<a
+  href="#download"
+  onClick={(event) => event.preventDefault()}
+  className="store-button"
+>
+  <img
+    src="/images/play%20store.png"
+    alt="Google Play"
+    className="store-logo"
+  />
+  <span>
+    <small>GET IT ON</small>
+    <strong>Google Play</strong>
+  </span>
+</a>
 
-          <a
-            href="#download"
-            onClick={(event) => event.preventDefault()}
-            className="store-button"
-          >
-            <span className="apple-symbol">●</span>
-            <span>
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </span>
-          </a>
+
+          
+<a
+  href="#download"
+  onClick={(event) => event.preventDefault()}
+  className="store-button"
+>
+  <img
+    src="/images/app%20store.png"
+    alt="App Store"
+    className="store-logo"
+  />
+  <span>
+    <small>Download on the</small>
+    <strong>App Store</strong>
+  </span>
+</a>
+
         </div>
       </div>
 
@@ -987,26 +955,34 @@ function Footer() {
       ],
     },
     {
-      title: "Our Services",
+      title: "Legal & Policies",
       links: [
-        "Monk Tracking",
-        "Temple Management",
-        "Donations",
-        "Pathshalas",
-        "Learning",
-        "Events",
-        "Matrimony",
-        "Jobs & Property",
+        "Privacy Policy",
+        "Terms & Conditions",
+        "Community Guidelines",
+        "Content Reporting Policy",
+        "Data Retention Policy",
+        "Donation Policy",
+        "Cookie Policy",
       ],
     },
     {
-      title: "Support",
+      title: "Privacy & Safety",
+      links: [
+        "Account & Data Deletion",
+        "Data Protection & Security",
+        "Child Safety Standards",
+        "Grievance Redressal",
+      ],
+    },
+    {
+      title: "Help & Support",
       links: [
         "Help Center",
-        "Privacy Policy",
-        "Terms of Service",
-        "Community Guidelines",
         "FAQs",
+        "Contact Us",
+        "Report an Issue",
+        "App Guide",
       ],
     },
   ];
@@ -1042,58 +1018,7 @@ function Footer() {
   return (
     <footer className="site-footer" id="site-footer">
       <div className="footer-main section-shell">
-        <div className="footer-brand-column">
-          <a
-            className="footer-logo"
-            href="/"
-            onClick={(event) => {
-              event.preventDefault();
-              footerGo("Home");
-            }}
-          >
-            <img src="/logo2.png" alt="JiNANAM Foundation" />
-          </a>
-
-          <p>
-            Building a united, empowered, and compassionate Jain community
-            through technology and seva.
-          </p>
-
-          <div className="social-links">
-            <a
-              href="#site-footer"
-              aria-label="Facebook"
-              onClick={(event) => event.preventDefault()}
-            >
-              <span className="social-letter">f</span>
-            </a>
-
-            <a
-              href="#site-footer"
-              aria-label="Instagram"
-              onClick={(event) => event.preventDefault()}
-            >
-              <span className="social-letter">◎</span>
-            </a>
-
-            <a
-              href="#site-footer"
-              aria-label="YouTube"
-              onClick={(event) => event.preventDefault()}
-            >
-              <span className="social-letter">▶</span>
-            </a>
-
-            <a
-              href="#site-footer"
-              aria-label="LinkedIn"
-              onClick={(event) => event.preventDefault()}
-            >
-              <span className="social-letter">in</span>
-            </a>
-          </div>
-        </div>
-
+        
         {groups.map((group) => (
           <div className="footer-links-column" key={group.title}>
             <h3>{group.title}</h3>
@@ -1199,6 +1124,7 @@ function App() {
 
   const isLoginPage = currentPath === "/login";
   const isSignupPage = currentPath === "/signup";
+  const isFourAppInfoPage = currentPath === "/4appinfo";
   const isAboutPage = currentPath === "/about";
   const isFeaturesPage = currentPath === "/features";
   const isCommunityPage = currentPath === "/community";
@@ -1221,34 +1147,37 @@ function App() {
       <Navbar />
 
       <main>
-        {isAboutPage ? (
-          <AboutUs />
-        ) : isFeaturesPage ? (
-          <FeaturesPage />
-        ) : isCommunityPage ? (
-          <CommunityPage />
-        ) : isEventsPage ? (
-          <EventPage />
-        ) : isResourcesPage ? (
-          <Resources />
-        ) : isContactPage ? (
-          <ContactPage />
-        ) : (
-          <>
-            <Hero />
-            <Statistics />
-            <HomeFeatures />
-            <WhyJinANAM />
-            <HomeCommunity />
-            <Testimonials />
-            <DownloadSection />
-          </>
-        )}
+        {isFourAppInfoPage ? (
+  <FourAppInfo />
+) : isAboutPage ? (
+  <AboutUs />
+) : isFeaturesPage ? (
+  <FeaturesPage />
+) : isCommunityPage ? (
+  <CommunityPage />
+) : isEventsPage ? (
+  <EventPage />
+) : isResourcesPage ? (
+  <Resources />
+) : isContactPage ? (
+  <ContactPage />
+) : (
+  <>
+    <Hero />
+    <Statistics />
+    <HomeFeatures />
+    <WhyJinANAM />
+    <HomeCommunity />
+    <Testimonials />
+    <DownloadSection />
+  </>
+)}
       </main>
 
       <Footer />
 
-      {!isAboutPage &&
+      {!isFourAppInfoPage &&
+        !isAboutPage &&
         !isFeaturesPage &&
         !isCommunityPage &&
         !isEventsPage &&
