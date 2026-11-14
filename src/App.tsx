@@ -201,7 +201,6 @@ function Navbar() {
   const isHomePage = currentPath === "/";
   const isAboutPage = currentPath === "/about";
   const isFeaturesPage = currentPath === "/features";
-  const isFourAppInfoPage = currentPath === "/4appinfo";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
   const isResourcesPage = currentPath === "/resources";
