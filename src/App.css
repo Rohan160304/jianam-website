@@ -407,17 +407,9 @@
 }
 
 .ecosystem-core img {
-  width: 82%;
-  max-height: 70%;
+  width: 120%;
+  max-height: 80%;
   object-fit: contain;
-}
-
-.ecosystem-core > span {
-  margin-top: 6px;
-  color: #52658c;
-  font-size: clamp(8px, 0.75vw, 11px);
-  font-weight: 800;
-  letter-spacing: 1.1px;
 }
 
 .ecosystem-node {

@@ -1,614 +1,1108 @@
 
+/* =========================================
+   JMF - GLOBAL DESIGN
+========================================= */
+
 .jmf-page {
-  --jmf-gold: #f8cf75;
-  --jmf-purple: #a855f7;
-  color: #fff;
-  background: #10091e;
+  --jmf-navy: #14243b;
+  --jmf-navy-dark: #0d192b;
+  --jmf-gold: #c99b4a;
+  --jmf-gold-light: #f0d59d;
+  --jmf-cream: #faf7f0;
+  --jmf-text: #26364a;
+  --jmf-muted: #697586;
+
+  width: 100%;
   overflow: hidden;
+  color: var(--jmf-text);
+  background: var(--jmf-cream);
   font-family: inherit;
 }
 
+.jmf-page *,
+.jmf-page *::before,
+.jmf-page *::after {
+  box-sizing: border-box;
+}
+
+.jmf-page button {
+  font-family: inherit;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
 .jmf-hero {
-  min-height: 760px;
   position: relative;
-  padding: 65px 24px 55px;
-  text-align: center;
+  min-height: 850px;
+  padding: 75px 24px 35px;
   overflow: hidden;
+  text-align: center;
+  color: #ffffff;
   background:
-    radial-gradient(ellipse at 50% 55%, rgba(139, 45, 190, .55), transparent 48%),
-    radial-gradient(ellipse at 15% 35%, rgba(87, 31, 144, .45), transparent 40%),
-    linear-gradient(135deg, #10091e, #241039 55%, #10091e);
+    radial-gradient(ellipse at 50% 48%, rgba(64, 88, 120, 0.65), transparent 48%),
+    linear-gradient(135deg, #0d192b 0%, #1a2e49 55%, #101d30 100%);
 }
 
 .jmf-hero::before {
-  content: "";
   position: absolute;
   inset: 0;
-  opacity: .3;
+  content: "";
+  pointer-events: none;
+  opacity: 0.22;
   background-image:
-    linear-gradient(120deg, transparent 48%, rgba(255, 211, 120, .15) 49%, transparent 50%),
-    linear-gradient(60deg, transparent 48%, rgba(191, 92, 255, .12) 49%, transparent 50%);
-  background-size: 95px 95px;
-  pointer-events: none;
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 55px 55px;
 }
 
-.jmf-glow {
+.jmf-hero::after {
   position: absolute;
-  width: 350px;
-  height: 350px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 180px;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(8, 16, 28, 0.55));
+}
+
+.jmf-hero-decoration {
+  position: absolute;
+  border: 1px solid rgba(240, 213, 157, 0.15);
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: .3;
   pointer-events: none;
 }
 
-.jmf-glow-one {
-  background: #a32cff;
-  left: -150px;
-  top: 200px;
+.jmf-decoration-one {
+  top: 100px;
+  left: -220px;
+  width: 500px;
+  height: 500px;
+  box-shadow:
+    0 0 0 35px rgba(240, 213, 157, 0.025),
+    0 0 0 70px rgba(240, 213, 157, 0.02);
 }
 
-.jmf-glow-two {
-  background: #ff9d38;
-  right: -150px;
-  top: 300px;
+.jmf-decoration-two {
+  right: -190px;
+  bottom: 40px;
+  width: 480px;
+  height: 480px;
+  box-shadow:
+    0 0 0 35px rgba(240, 213, 157, 0.025),
+    0 0 0 70px rgba(240, 213, 157, 0.02);
 }
 
-.jmf-early-badge {
-  position: absolute;
-  top: 28px;
-  left: 6%;
-  width: 155px;
-  height: 155px;
-  border: 2px solid var(--jmf-gold);
-  border-radius: 34% 45% 35% 45%;
-  transform: rotate(-8deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  color: var(--jmf-gold);
-  background: rgba(38, 17, 53, .8);
-  box-shadow: 0 0 25px rgba(248, 207, 117, .3);
-  font-size: 12px;
-}
-
-.jmf-early-badge strong {
-  font-size: 15px;
-}
-
-.jmf-early-badge > * {
-  transform: rotate(8deg);
+.jmf-decoration-three {
+  top: 160px;
+  right: 17%;
+  width: 90px;
+  height: 90px;
+  border-color: rgba(240, 213, 157, 0.25);
 }
 
 .jmf-hero-content {
   position: relative;
-  z-index: 1;
-  max-width: 1050px;
-  margin: auto;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.jmf-early-badge {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  left: 6%;
+  display: flex;
+  width: 140px;
+  height: 140px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid var(--jmf-gold);
+  border-radius: 50%;
+  color: var(--jmf-gold-light);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 0 35px rgba(201, 155, 74, 0.12);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.jmf-early-badge svg {
+  margin-bottom: 3px;
+  color: var(--jmf-gold);
+}
+
+.jmf-early-badge strong {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.jmf-early-badge span {
+  margin-top: 3px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.jmf-early-badge div {
+  margin-top: 2px;
+  color: var(--jmf-gold);
+  letter-spacing: 4px;
 }
 
 .jmf-brand-mark {
-  color: var(--jmf-gold);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  gap: 10px;
+  color: var(--jmf-gold-light);
+}
+
+.jmf-brand-mark svg {
+  color: var(--jmf-gold);
+}
+
+.jmf-brand-mark span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.jmf-hero-eyebrow {
+  margin: 35px 0 10px;
+  color: #d9c49e;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 5px;
 }
 
 .jmf-hero h1 {
-  color: var(--jmf-gold);
-  font-family: Georgia, serif;
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: 1.02;
-  letter-spacing: 3px;
-  margin: 12px 0;
-  text-shadow: 0 0 25px rgba(255, 190, 92, .35);
+  margin: 0;
+  color: #f3dba9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(52px, 8vw, 100px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: 2px;
+  text-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
+}
+
+.jmf-hero h1 span {
+  display: block;
+  margin-top: 12px;
+  color: #ffffff;
+  font-size: 0.48em;
+  letter-spacing: 9px;
 }
 
 .jmf-tagline {
-  color: #f5d9a0;
-  font-family: Georgia, serif;
-  font-size: clamp(15px, 2vw, 23px);
+  margin: 25px 0;
+  color: #e4d6bb;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(15px, 2vw, 20px);
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 2px;
 }
 
 .jmf-event-info {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 18px 35px;
-  margin: 24px 0;
+  justify-content: center;
+  gap: 15px 35px;
+  margin: 25px 0;
 }
 
 .jmf-event-info span {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: #f7dfb0;
+  gap: 10px;
+  color: #f4e8d1;
+  font-size: 13px;
   font-weight: 700;
-  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 .jmf-event-info svg {
-  color: var(--jmf-gold);
+  color: var(--jmf-gold-light);
 }
 
+/* =========================================
+   DECORATIVE STAGE
+========================================= */
+
 .jmf-stage {
-  height: 180px;
-  max-width: 850px;
-  margin: 25px auto 10px;
   position: relative;
   display: flex;
+  max-width: 760px;
+  height: 190px;
   align-items: center;
   justify-content: center;
+  margin: 35px auto 25px;
   overflow: hidden;
+  border-top: 1px solid rgba(240, 213, 157, 0.45);
   border-radius: 50% 50% 0 0;
-  border-top: 2px solid rgba(255, 211, 120, .65);
   background:
-    radial-gradient(ellipse at center bottom, rgba(255, 173, 74, .35), transparent 55%),
-    repeating-linear-gradient(90deg, transparent 0 55px, rgba(255, 190, 100, .13) 56px 58px),
-    linear-gradient(180deg, rgba(98, 32, 148, .25), rgba(22, 8, 35, .1));
+    radial-gradient(ellipse at 50% 100%, rgba(201, 155, 74, 0.27), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+}
+
+.jmf-stage::before,
+.jmf-stage::after {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background: linear-gradient(transparent, rgba(240, 213, 157, 0.35), transparent);
+}
+
+.jmf-stage::before {
+  left: 20%;
+}
+
+.jmf-stage::after {
+  right: 20%;
 }
 
 .jmf-stage-arch {
-  width: 170px;
-  height: 150px;
-  border: 3px solid var(--jmf-gold);
-  border-radius: 90px 90px 8px 8px;
-  box-shadow: 0 0 30px rgba(255, 195, 90, .45), inset 0 0 30px rgba(191, 92, 255, .3);
-  color: var(--jmf-gold);
+  position: relative;
+  z-index: 2;
   display: flex;
+  width: 155px;
+  height: 145px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: radial-gradient(circle, rgba(130, 54, 170, .5), rgba(25, 9, 42, .85));
+  border: 2px solid var(--jmf-gold);
+  border-bottom: 0;
+  border-radius: 90px 90px 0 0;
+  color: var(--jmf-gold-light);
+  background: linear-gradient(180deg, rgba(201, 155, 74, 0.12), rgba(13, 25, 43, 0.85));
+  box-shadow:
+    0 0 35px rgba(201, 155, 74, 0.18),
+    inset 0 0 25px rgba(201, 155, 74, 0.08);
 }
 
 .jmf-stage-arch span {
-  font-size: 42px;
+  font-size: 40px;
 }
 
-.jmf-stage-lights {
+.jmf-stage-orbit {
   position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(240, 213, 157, 0.13);
+  border-radius: 50%;
+}
+
+.jmf-orbit-one {
+  transform: scaleX(1.8);
+}
+
+.jmf-orbit-two {
+  transform: scaleX(2.5);
+}
+
+.jmf-stage-light {
+  position: absolute;
+  bottom: 20px;
+  width: 180px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(240, 213, 157, 0.28);
+  filter: blur(35px);
+}
+
+.jmf-stage-light-left {
+  left: 15%;
+}
+
+.jmf-stage-light-right {
+  right: 15%;
+}
+
+.jmf-stage-floor {
+  position: absolute;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 35px;
-  background: linear-gradient(90deg, transparent, #e8a8ff, #ffdc8a, #e8a8ff, transparent);
-  filter: blur(15px);
+  height: 25px;
+  background: linear-gradient(90deg, transparent, rgba(240, 213, 157, 0.45), transparent);
+  filter: blur(12px);
 }
 
 .jmf-hero-content > h2 {
-  color: var(--jmf-gold);
-  font-family: Georgia, serif;
-  font-size: clamp(22px, 3vw, 32px);
-  font-style: italic;
-  margin: 12px 0;
+  margin: 15px 0 10px;
+  color: var(--jmf-gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px, 3vw, 31px);
+  font-weight: 500;
 }
 
 .jmf-description {
-  max-width: 680px;
+  max-width: 650px;
   margin: 0 auto 25px;
-  color: #e5d9ee;
-  line-height: 1.7;
+  color: #d2d9e3;
   font-size: 14px;
+  line-height: 1.8;
 }
 
+/* =========================================
+   COUNTDOWN
+========================================= */
+
 .jmf-countdown {
-  max-width: 580px;
-  margin: 25px auto;
   display: flex;
+  max-width: 570px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--jmf-gold);
-  border-radius: 14px;
-  background: rgba(35, 13, 52, .8);
-  box-shadow: 0 0 22px rgba(189, 91, 255, .3);
-  padding: 15px 10px;
+  margin: 30px auto;
+  padding: 18px 15px;
+  border: 1px solid rgba(240, 213, 157, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(10px);
 }
 
 .jmf-countdown-label {
-  color: var(--jmf-gold);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1.5;
-  padding: 0 15px;
+  padding: 0 18px;
+  color: var(--jmf-gold-light);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
 }
 
 .jmf-countdown-item {
-  flex: 1;
-  border-left: 1px solid rgba(255, 221, 160, .5);
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
+  border-left: 1px solid rgba(240, 213, 157, 0.3);
 }
 
 .jmf-countdown-item strong {
-  font-size: clamp(22px, 4vw, 34px);
-  color: white;
+  color: #ffffff;
+  font-size: clamp(23px, 4vw, 35px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .jmf-countdown-item span {
-  font-size: 12px;
-  color: #e5d9ee;
+  color: #cbd3df;
+  font-size: 11px;
+  letter-spacing: 0.5px;
 }
 
+/* =========================================
+   BUTTONS
+========================================= */
+
 .jmf-primary-button {
-  border: 0;
-  border-radius: 50px;
-  padding: 15px 38px;
   display: inline-flex;
+  min-height: 50px;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  color: #24132a;
-  background: linear-gradient(110deg, #ffe6a3, #eeb64e);
-  font-size: 17px;
+  gap: 13px;
+  padding: 14px 32px;
+  border: 1px solid var(--jmf-gold-light);
+  border-radius: 6px;
+  color: var(--jmf-navy-dark);
+  background: linear-gradient(110deg, #f1dba9, #c99b4a);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+  font-size: 13px;
   font-weight: 800;
+  letter-spacing: 1.2px;
   cursor: pointer;
-  box-shadow: 0 0 25px rgba(248, 207, 117, .3);
-  transition: transform .2s, box-shadow .2s;
+  transition: all 0.25s ease;
 }
 
 .jmf-primary-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 35px rgba(248, 207, 117, .55);
+  box-shadow: 0 12px 30px rgba(201, 155, 74, 0.25);
+}
+
+.jmf-hero-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  margin-top: 45px;
+  color: #c7d0dc;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.jmf-bottom-star {
+  color: var(--jmf-gold);
+}
+
+/* =========================================
+   COMMON SECTION HEADING
+========================================= */
+
+.jmf-section {
+  padding: 75px 25px;
+}
+
+.jmf-section-heading {
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.jmf-section-heading > span {
+  color: var(--jmf-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.jmf-section-heading h2 {
+  margin: 10px 0;
+  color: var(--jmf-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(29px, 4vw, 40px);
+  font-weight: 600;
+}
+
+.jmf-section-heading p {
+  margin: 0;
+  color: var(--jmf-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   EVENT HIGHLIGHTS
+========================================= */
+
+.jmf-highlights-section {
+  background: var(--jmf-cream);
 }
 
 .jmf-highlights {
-  max-width: 1200px;
-  margin: 25px auto;
-  padding: 25px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border: 1px solid rgba(215, 143, 255, .45);
-  border-radius: 22px;
-  background: linear-gradient(110deg, #21102f, #301343, #1c0d2b);
+  max-width: 1200px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 auto;
 }
 
 .jmf-highlight-card {
+  min-height: 220px;
+  padding: 27px 18px;
+  border: 1px solid #e9e1d2;
+  border-radius: 12px;
+  background: #ffffff;
   text-align: center;
-  padding: 12px 15px;
-  border-right: 1px solid rgba(255, 220, 160, .3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.jmf-highlight-card:last-child {
-  border-right: 0;
+.jmf-highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(20, 36, 59, 0.08);
 }
 
-.jmf-highlight-card svg {
-  width: 34px;
-  height: 34px;
-  color: var(--jmf-gold);
-  margin-bottom: 10px;
+.jmf-highlight-icon {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  place-items: center;
+  margin: 0 auto 17px;
+  border-radius: 50%;
+  color: #9a702f;
+  background: #f7f0e2;
+}
+
+.jmf-highlight-icon svg {
+  width: 25px;
+  height: 25px;
 }
 
 .jmf-highlight-card h3 {
-  color: #fff0cc;
+  margin: 0 0 10px;
+  color: var(--jmf-navy);
   font-size: 15px;
-  margin: 0 0 8px;
+  font-weight: 700;
 }
 
 .jmf-highlight-card p {
-  color: #d7c8e3;
-  font-size: 12px;
-  line-height: 1.6;
   margin: 0;
+  color: var(--jmf-muted);
+  font-size: 12px;
+  line-height: 1.7;
 }
+
+/* =========================================
+   STAR LINEUP
+========================================= */
 
 .jmf-lineup {
-  max-width: 1200px;
-  min-height: 135px;
-  margin: 25px auto;
-  padding: 20px 45px;
-  border: 1px solid rgba(215, 143, 255, .5);
-  border-radius: 22px;
+  position: relative;
   display: flex;
+  max-width: 1200px;
+  min-height: 240px;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 25px;
+  margin: 10px auto 65px;
+  padding: 35px 55px;
   overflow: hidden;
+  border-radius: 16px;
+  color: #ffffff;
   background:
-    radial-gradient(ellipse at center, rgba(177, 55, 238, .6), transparent 65%),
-    linear-gradient(90deg, #21102f, #4a1769, #21102f);
+    radial-gradient(ellipse at 70% 50%, rgba(201, 155, 74, 0.22), transparent 45%),
+    linear-gradient(110deg, #0d192b, #263b56);
 }
 
-.jmf-lineup > div:first-child {
-  min-width: 180px;
+.jmf-lineup::before {
+  position: absolute;
+  top: -140px;
+  right: 20%;
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgba(240, 213, 157, 0.14);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 30px rgba(240, 213, 157, 0.025);
 }
 
-.jmf-lineup > div:first-child span {
-  color: var(--jmf-gold);
+.jmf-lineup-content {
+  position: relative;
+  z-index: 1;
+}
+
+.jmf-lineup-eyebrow {
+  color: var(--jmf-gold-light);
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 3px;
 }
 
 .jmf-lineup h2 {
-  font-family: Georgia, serif;
-  color: var(--jmf-gold);
-  font-size: 28px;
-  margin: 3px 0;
+  margin: 9px 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: 1px;
 }
 
 .jmf-stars {
-  color: var(--jmf-gold);
-  letter-spacing: 5px;
+  color: var(--jmf-gold-light);
+  font-size: 17px;
+  letter-spacing: 7px;
+}
+
+.jmf-lineup-content p {
+  margin: 12px 0 0;
+  color: #d3dbe5;
+  font-size: 13px;
 }
 
 .jmf-lineup-art {
-  flex: 1;
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  gap: 35px;
-  color: #f3c4ff;
-  opacity: .8;
+  gap: 22px;
+  color: var(--jmf-gold-light);
+}
+
+.jmf-mic-circle {
+  display: grid;
+  width: 75px;
+  height: 75px;
+  place-items: center;
+  border: 1px solid rgba(240, 213, 157, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.jmf-mic-two {
+  width: 100px;
+  height: 100px;
+  color: #ffffff;
+  background: rgba(201, 155, 74, 0.2);
 }
 
 .jmf-lineup-coming {
+  position: relative;
+  z-index: 1;
+  min-width: 175px;
+  padding: 16px 20px;
   border: 1px solid var(--jmf-gold);
-  border-radius: 50px;
-  padding: 15px 25px;
-  color: var(--jmf-gold);
+  border-radius: 6px;
+  color: var(--jmf-gold-light);
   text-align: center;
-  font-weight: 800;
-  font-size: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.jmf-lineup-coming strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+/* =========================================
+   STAY AND PASS SECTION
+========================================= */
+
+.jmf-details-section {
+  padding-top: 15px;
+  background: #f2eee5;
 }
 
 .jmf-details {
-  max-width: 1200px;
-  margin: 30px auto;
   display: grid;
+  max-width: 1200px;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
-  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .jmf-stay-card,
 .jmf-passes {
-  border: 1px solid rgba(215, 143, 255, .5);
-  border-radius: 22px;
-  background: linear-gradient(140deg, #291238, #180c26);
   overflow: hidden;
+  border: 1px solid #e4dccd;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(20, 36, 59, 0.04);
 }
+
+/* =========================================
+   STAY CARD
+========================================= */
 
 .jmf-stay-card {
   padding: 15px;
-  text-align: center;
 }
 
 .jmf-palitana-art {
-  min-height: 190px;
-  border-radius: 16px;
+  position: relative;
   display: flex;
-  align-items: end;
+  min-height: 230px;
+  align-items: flex-end;
   justify-content: center;
-  padding: 20px;
+  padding: 25px;
+  overflow: hidden;
+  border-radius: 9px;
   background:
-    linear-gradient(0deg, rgba(20, 8, 31, .8), transparent 70%),
-    radial-gradient(ellipse at 50% 70%, #c58c67, #593b66 50%, #211337);
+    linear-gradient(0deg, rgba(13, 25, 43, 0.9), rgba(13, 25, 43, 0.05) 75%),
+    radial-gradient(ellipse at 50% 75%, #bd9b78, #6c6370 48%, #26364a 100%);
 }
 
-.jmf-palitana-art span {
-  color: #ffe2a1;
-  font-family: Georgia, serif;
-  font-size: 25px;
-  font-style: italic;
+.jmf-palitana-art::before,
+.jmf-palitana-art::after {
+  position: absolute;
+  bottom: 0;
+  width: 45%;
+  height: 80%;
+  content: "";
+  opacity: 0.2;
+  background: linear-gradient(135deg, transparent 40%, #f0d59d 41%, transparent 43%);
 }
 
-.jmf-stay-card > h2 {
-  color: #ffe3a5;
-  font-family: Georgia, serif;
-  font-style: italic;
+.jmf-palitana-art::before {
+  left: 0;
+}
+
+.jmf-palitana-art::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.jmf-palitana-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: center;
+}
+
+.jmf-palitana-overlay span {
+  color: #f0d59d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.jmf-palitana-overlay strong {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  letter-spacing: 3px;
+}
+
+.jmf-stay-content {
+  padding: 20px 12px 10px;
+  text-align: center;
+}
+
+.jmf-card-eyebrow {
+  color: #9a702f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.jmf-stay-card > .jmf-stay-content h2 {
+  margin: 9px 0 22px;
+  color: var(--jmf-navy);
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 25px;
-  margin: 15px 0;
 }
 
 .jmf-stay-features {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 10px 0;
+  padding: 15px 0 5px;
+  border-top: 1px solid #eee8dc;
 }
 
-.jmf-stay-features span {
+.jmf-stay-features > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
+  gap: 8px;
+  color: var(--jmf-navy);
 }
 
 .jmf-stay-features svg {
-  color: var(--jmf-gold);
-  width: 27px;
-  height: 27px;
+  width: 25px;
+  height: 25px;
+  color: #a77c38;
+}
+
+.jmf-stay-features strong {
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .jmf-stay-features small {
-  color: #cfc0db;
+  color: var(--jmf-muted);
+  font-size: 10px;
   font-weight: 400;
 }
 
+/* =========================================
+   PASS SECTION
+========================================= */
+
 .jmf-passes {
-  padding: 25px 20px;
+  padding: 30px 22px;
   text-align: center;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 110px;
 }
 
-.jmf-passes > h2 {
-  display: inline-block;
-  background: linear-gradient(100deg, #ffe5a2, #eab54e);
-  color: #28152b;
-  padding: 10px 28px;
-  border-radius: 50px;
-  font-size: 19px;
-  margin: 0 0 15px;
+.jmf-pass-heading h2 {
+  margin: 10px 0;
+  color: var(--jmf-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
 }
 
-.jmf-passes > p {
-  color: #d9c9e6;
+.jmf-pass-heading p {
+  margin: 0;
+  color: var(--jmf-muted);
   font-size: 12px;
-  margin: 5px;
-}
-
-.jmf-passes > p strong {
-  color: #ffe1a0;
-  font-size: 14px;
 }
 
 .jmf-pass-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 .jmf-pass-card {
-  padding: 15px 10px;
-  border: 1px solid #bd7aff;
-  border-radius: 17px;
-  background: linear-gradient(140deg, #572b75, #331b49);
+  position: relative;
   display: flex;
+  min-height: 225px;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  justify-content: center;
+  gap: 8px;
+  padding: 22px 12px;
+  overflow: hidden;
+  border: 1px solid #e8ddc8;
+  border-radius: 10px;
+  background: #fbf9f4;
 }
 
-.jmf-pass-card svg {
-  color: var(--jmf-gold);
+.jmf-pass-icon {
+  display: grid;
+  width: 45px;
+  height: 45px;
+  place-items: center;
+  margin-bottom: 3px;
+  border-radius: 50%;
+  color: #98702f;
+  background: #f1e8d5;
 }
 
-.jmf-pass-card strong {
-  color: #f5e6ff;
+.jmf-pass-card > strong {
+  color: var(--jmf-navy);
   font-size: 13px;
 }
 
 .jmf-pass-card h3 {
-  color: var(--jmf-gold);
-  font-size: clamp(24px, 3vw, 34px);
-  margin: 5px 0 0;
+  margin: 3px 0 0;
+  color: #9b712e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
 }
 
-.jmf-pass-card span {
-  color: #e5d9ee;
-  font-size: 12px;
+.jmf-pass-card > span {
+  color: var(--jmf-muted);
+  font-size: 11px;
 }
 
 .jmf-pass-card button {
   margin-top: 8px;
-  border: 1px solid var(--jmf-gold);
-  color: var(--jmf-gold);
+  padding: 9px 18px;
+  border: 1px solid #b48b4c;
+  border-radius: 5px;
+  color: #8b6429;
   background: transparent;
-  border-radius: 30px;
-  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background .2s, color .2s;
+  transition: all 0.2s ease;
 }
 
 .jmf-pass-card button:hover {
-  background: var(--jmf-gold);
-  color: #24132a;
+  color: #ffffff;
+  background: #a77c38;
 }
 
+.jmf-premium-pass {
+  border-color: #c99b4a;
+  background: #f7f0e2;
+}
+
+.jmf-pass-popular {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 6px 12px;
+  border-bottom-left-radius: 8px;
+  color: #ffffff;
+  background: #a77c38;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   FINAL BANNER
+========================================= */
+
 .jmf-footer-banner {
+  position: relative;
+  padding: 65px 20px 70px;
+  overflow: hidden;
+  color: #ffffff;
+  background: linear-gradient(120deg, #0d192b, #263b56, #0d192b);
   text-align: center;
-  padding: 55px 20px 65px;
-  color: var(--jmf-gold);
-  background:
-    radial-gradient(ellipse at center, rgba(131, 46, 177, .45), transparent 65%),
-    #10091e;
+}
+
+.jmf-footer-decoration {
+  position: absolute;
+  top: -190px;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(240, 213, 157, 0.15);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 35px rgba(240, 213, 157, 0.025);
+}
+
+.jmf-footer-banner > svg,
+.jmf-footer-banner > span,
+.jmf-footer-banner h2,
+.jmf-footer-banner p {
+  position: relative;
+  z-index: 1;
+}
+
+.jmf-footer-banner > svg {
+  margin-bottom: 15px;
+  color: var(--jmf-gold-light);
+}
+
+.jmf-footer-banner > span {
+  display: block;
+  color: var(--jmf-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
 
 .jmf-footer-banner h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(25px, 4vw, 38px);
-  letter-spacing: 2px;
-  margin: 10px 0;
+  margin: 12px 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 4vw, 42px);
+  letter-spacing: 1px;
 }
 
 .jmf-footer-banner p {
-  color: #e6d7ef;
-  font-size: 14px;
+  margin: 0;
+  color: #d3dbe5;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-@media (max-width: 900px) {
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .jmf-early-badge {
+    top: 25px;
+    left: 25px;
+    width: 115px;
+    height: 115px;
+  }
+
+  .jmf-hero {
+    padding-top: 170px;
+  }
+
+  .jmf-highlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .jmf-lineup {
+    margin-right: 25px;
+    margin-left: 25px;
+    padding: 30px;
+  }
+
+  .jmf-lineup-art {
+    gap: 12px;
+  }
+
+  .jmf-mic-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .jmf-mic-two {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+  .jmf-hero {
+    min-height: auto;
+    padding: 30px 16px 30px;
+  }
+
   .jmf-early-badge {
     position: relative;
     top: auto;
     left: auto;
+    width: 105px;
+    height: 105px;
     margin: 0 auto 25px;
-    width: 125px;
-    height: 125px;
   }
 
-  .jmf-highlights {
-    grid-template-columns: repeat(2, 1fr);
+  .jmf-early-badge strong {
+    font-size: 10px;
   }
 
-  .jmf-highlight-card {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 220, 160, .2);
-  }
-
-  .jmf-highlight-card:last-child {
-    grid-column: 1 / -1;
-    border-bottom: 0;
-  }
-
-  .jmf-details {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .jmf-hero {
-    padding: 35px 15px 40px;
-    min-height: auto;
-  }
-
-  .jmf-brand-mark {
+  .jmf-brand-mark span {
     font-size: 9px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+  }
+
+  .jmf-hero-eyebrow {
+    margin-top: 25px;
+    font-size: 9px;
+    letter-spacing: 2px;
   }
 
   .jmf-hero h1 {
-    font-size: 43px;
+    font-size: clamp(43px, 12vw, 65px);
+    letter-spacing: 1px;
+  }
+
+  .jmf-hero h1 span {
+    margin-top: 10px;
+    font-size: 0.43em;
+    letter-spacing: 4px;
+  }
+
+  .jmf-tagline {
+    margin: 20px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
   }
 
   .jmf-event-info {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 13px;
+    margin: 20px 0;
   }
 
   .jmf-event-info span {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .jmf-stage {
-    height: 135px;
+    height: 140px;
+    margin: 25px auto 18px;
   }
 
   .jmf-stage-arch {
-    width: 125px;
-    height: 115px;
+    width: 115px;
+    height: 110px;
+  }
+
+  .jmf-stage-arch span {
+    font-size: 33px;
+  }
+
+  .jmf-hero-content > h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .jmf-description {
+    font-size: 12px;
+    line-height: 1.7;
   }
 
   .jmf-countdown {
+    margin: 22px auto;
     padding: 12px 5px;
   }
 
   .jmf-countdown-label {
-    padding: 0 7px;
-    font-size: 9px;
+    padding: 0 8px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
   }
 
   .jmf-countdown-item strong {
@@ -616,22 +1110,58 @@
   }
 
   .jmf-countdown-item span {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .jmf-primary-button {
-    padding: 13px 25px;
-    font-size: 14px;
+    min-height: 45px;
+    padding: 12px 23px;
+    font-size: 11px;
+  }
+
+  .jmf-hero-bottom {
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 30px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .jmf-section {
+    padding: 50px 16px;
+  }
+
+  .jmf-section-heading {
+    margin-bottom: 25px;
+  }
+
+  .jmf-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .jmf-section-heading p {
+    font-size: 12px;
   }
 
   .jmf-highlights {
-    margin: 15px;
-    padding: 12px;
-    gap: 5px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .jmf-highlight-card {
-    padding: 15px 7px;
+    min-height: 195px;
+    padding: 20px 12px;
+  }
+
+  .jmf-highlight-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 12px;
+  }
+
+  .jmf-highlight-icon svg {
+    width: 21px;
+    height: 21px;
   }
 
   .jmf-highlight-card h3 {
@@ -643,51 +1173,168 @@
   }
 
   .jmf-lineup {
-    margin: 15px;
-    padding: 20px 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 22px;
+    margin: 0 16px 45px;
+    padding: 30px 15px;
     text-align: center;
   }
 
-  .jmf-lineup-art {
-    flex-basis: 100%;
-    gap: 20px;
+  .jmf-lineup h2 {
+    font-size: 30px;
   }
 
-  .jmf-lineup-art svg {
-    width: 45px;
-    height: 45px;
+  .jmf-lineup-content p {
+    font-size: 12px;
+  }
+
+  .jmf-lineup-art {
+    flex: auto;
+    gap: 12px;
+  }
+
+  .jmf-mic-circle {
+    width: 55px;
+    height: 55px;
+  }
+
+  .jmf-mic-circle svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .jmf-mic-two {
+    width: 75px;
+    height: 75px;
   }
 
   .jmf-lineup-coming {
-    font-size: 11px;
+    min-width: 160px;
     padding: 12px 18px;
   }
 
+  .jmf-details-section {
+    padding-top: 30px;
+  }
+
   .jmf-details {
-    padding: 0 15px;
-    margin: 20px auto;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .jmf-palitana-art {
+    min-height: 180px;
+  }
+
+  .jmf-palitana-overlay strong {
+    font-size: 27px;
+  }
+
+  .jmf-stay-card > .jmf-stay-content h2 {
+    font-size: 22px;
   }
 
   .jmf-stay-features {
-    flex-wrap: wrap;
-  }
-
-  .jmf-pass-options {
     gap: 8px;
   }
 
-  .jmf-pass-card {
-    padding: 12px 5px;
+  .jmf-stay-features strong {
+    font-size: 10px;
   }
 
-  .jmf-pass-card h3 {
+  .jmf-stay-features small {
+    font-size: 9px;
+  }
+
+  .jmf-passes {
+    padding: 25px 13px;
+  }
+
+  .jmf-pass-heading h2 {
     font-size: 23px;
   }
 
-  .jmf-pass-card button {
+  .jmf-pass-options {
+    gap: 9px;
+    margin-top: 22px;
+  }
+
+  .jmf-pass-card {
+    min-height: 210px;
+    padding: 18px 7px;
+  }
+
+  .jmf-pass-card h3 {
+    font-size: 25px;
+  }
+
+  .jmf-pass-card > strong {
     font-size: 11px;
-    padding: 7px 10px;
+  }
+
+  .jmf-pass-card button {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .jmf-footer-banner {
+    padding: 50px 18px;
+  }
+
+  .jmf-footer-banner h2 {
+    font-size: 28px;
+  }
+
+  .jmf-footer-banner p {
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .jmf-hero h1 {
+    font-size: 39px;
+  }
+
+  .jmf-hero h1 span {
+    font-size: 0.4em;
+    letter-spacing: 3px;
+  }
+
+  .jmf-countdown-label {
+    padding: 0 5px;
+    font-size: 7px;
+  }
+
+  .jmf-countdown-item strong {
+    font-size: 18px;
+  }
+
+  .jmf-countdown-item span {
+    font-size: 8px;
+  }
+
+  .jmf-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .jmf-highlight-card {
+    min-height: auto;
+  }
+
+  .jmf-stay-features {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .jmf-pass-options {
+    grid-template-columns: 1fr;
+  }
+
+  .jmf-pass-card {
+    min-height: 195px;
   }
 }

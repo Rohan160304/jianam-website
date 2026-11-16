@@ -64,11 +64,7 @@ const communityNodes = [
   { label: "Events", icon: CalendarDays, className: "node-events" },
   { label: "Jobs", icon: BriefcaseBusiness, className: "node-jobs" },
   { label: "Matrimony", icon: Heart, className: "node-matrimony" },
-  {
-    label: "Visitor Management",
-    icon: House,
-    className: "node-property",
-  },
+  { label: "Visitor Management", icon: House, className: "node-property"},
   { label: "Volunteer", icon: HandHeart, className: "node-volunteer" },
   { label: "Donations", icon: Gift, className: "node-donations" },
 ];
@@ -281,7 +277,6 @@ function EcosystemDiagram() {
 
       <div className="ecosystem-core">
         <img src="/logo.png" alt="JiNANAM Foundation" />
-        <span>ONE COMMUNITY</span>
       </div>
 
       {communityNodes.map(({ label, icon: Icon, className }) => (
