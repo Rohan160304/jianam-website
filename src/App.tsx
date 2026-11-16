@@ -175,7 +175,7 @@ function Navbar() {
             goTo("Home");
           }}
         >
-          <img src="/logo2.png" alt="JiNANAM Foundation" />
+          <img src="/J2.jpg" alt="JiNANAM Foundation" />
         </a>
 
         <nav
