@@ -8,9 +8,10 @@ import Resources from "./Resources";
 import ContactPage from "./Contact";
 import LoginPage from "./Login";
 import Signup from "./Signup";
+import LegalPolicyPage, { legalPolicyRoutes } from "./LegalPolicyPage";
+import PrivacySafetyPage, { privacySafetyRoutes, } from "./PrivacySafetyPage";
 import {
   ArrowRight,
-  ArrowUpRight,
   BookOpen,
   BriefcaseBusiness,
   CalendarDays,
@@ -29,11 +30,9 @@ import {
   X,
   Building2,
   Gift,
-  GraduationCap,
   Landmark,
   Smartphone,
   Sparkles,
-  Compass,
   Bell,
   CircleUserRound,
   Search,
@@ -47,86 +46,12 @@ import {
 } from "lucide-react";
 import "./App.css";
 
-const features = [
-  {
-    name: "Monk Tracking",
-    description: "Live tracking & safety",
-    icon: Compass,
-    color: "blue",
-  },
-  {
-    name: "Temple Management",
-    description: "Digital temple operations",
-    icon: Landmark,
-    color: "orange",
-  },
-  {
-    name: "Community Feed",
-    description: "Updates & announcements",
-    icon: Users,
-    color: "green",
-  },
-  {
-    name: "Jain Music",
-    description: "Bhakti & devotional",
-    icon: Music,
-    color: "purple",
-  },
-  {
-    name: "Learning",
-    description: "Knowledge & scriptures",
-    icon: BookOpen,
-    color: "violet",
-  },
-  {
-    name: "Pathshala",
-    description: "Kids' learning hub",
-    icon: GraduationCap,
-    color: "coral",
-  },
-  {
-    name: "Volunteer",
-    description: "Seva & volunteering",
-    icon: HandHeart,
-    color: "green",
-  },
-  {
-    name: "Donations",
-    description: "Secure & transparent",
-    icon: Gift,
-    color: "orange",
-  },
-  {
-    name: "Jobs",
-    description: "Find & post jobs",
-    icon: BriefcaseBusiness,
-    color: "teal",
-  },
-  {
-    name: "Visitor Management",
-    description: "Visit and crowd Management",
-    icon: House,
-    color: "purple",
-  },
-  {
-    name: "Matrimony",
-    description: "Jain matrimonial",
-    icon: Heart,
-    color: "coral",
-  },
-  {
-    name: "Events",
-    description: "Events & gatherings",
-    icon: CalendarDays,
-    color: "teal",
-  },
-  {
-    name: "Tours & Yatras",
-    description: "Pilgrimage & tours",
-    icon: Building2,
-    color: "violet",
-  },
-];
+
+const features: {
+  name: string;
+  icon: typeof Landmark;
+  color: string;
+}[] = [];
 
 const communityNodes = [
   { label: "Temple", icon: Landmark, className: "node-temple" },
@@ -445,9 +370,12 @@ function Statistics() {
     {
       title: "Users",
       stats: [
-        { number: "5,000+", label: "MS", icon: Users, color: "orange" },
+        { number: "5,000+", label: "Sadhu/Sadhvi Baghwant", icon: Users, color: "orange" },
         { number: "5M+", label: "Jain Members", icon: UserRound, color: "green" },
         { number: "250K+", label: "Non-Jain Members", icon: UserPlus, color: "gold" },
+        { number: "25K+", label: "Staffs", icon: UserPlus, color: "gold" },
+        { number: "30K+", label: "Volunteers", icon: UserPlus, color: "gold" },
+        { number: "100K+", label: "Vihar seva members", icon: UserPlus, color: "gold" },
       ],
     },
     {
@@ -517,28 +445,10 @@ function HomeFeatures() {
       id="features"
     >
       <SectionHeading
-        title="Everything You Need. All in One Place."
-        description="Powerful features designed for every aspect of Jain life."
+        eyebrow="*Counts shown are for illustrative purposes only. Actual figures will be updated soon."
+        title=""
+        description=""
       />
-
-      <div className="features-grid">
-        {features.map(({ name, description, icon: Icon, color }) => (
-          <a
-            href={name === "Events" ? "/events" : "/features"}
-            className="feature-card"
-            key={name}
-          >
-            <div className={`feature-icon ${color}`}>
-              <Icon size={27} strokeWidth={2.1} />
-            </div>
-            <h3>{name}</h3>
-            <p>{description}</p>
-            <span className="feature-arrow">
-              <ArrowUpRight size={16} />
-            </span>
-          </a>
-        ))}
-      </div>
     </section>
   );
 }
@@ -660,7 +570,22 @@ function HomeCommunity() {
             </span>
           ))}
         </div>
+          <div className="network-map-container">
+  <img
+    src="/images/g.jpg"
+    alt="World map outline showing the global Jain network"
+    className="network-map-image"
+  />
 
+  <span className="map-dot dot-orange"></span>
+  <span className="map-dot dot-blue"></span>
+  <span className="map-dot dot-green"></span>
+  <span className="map-dot dot-purple"></span>
+  <span className="map-dot dot-red"></span>
+  <span className="map-dot dot-yellow"></span>
+  <span className="map-dot dot-pink"></span>
+  <span className="map-dot dot-teal"></span>
+</div>
         <a
           className="button button-primary community-button"
           href="/community"
@@ -671,6 +596,7 @@ function HomeCommunity() {
         >
           Explore Communities <ArrowRight size={17} />
         </a>
+        
       </div>
     </section>
   );
@@ -822,11 +748,8 @@ function PhoneMockup({
               Search services
             </div>
             <div className="app-feature-grid">
-              {features.slice(0, 8).map(({ name, icon: Icon, color }) => (
+              {features.slice(0, 8).map(({ name }) => (
                 <div className="app-feature" key={name}>
-                  <span className={`app-feature-icon ${color}`}>
-                    <Icon size={18} />
-                  </span>
                   <small>{name}</small>
                 </div>
               ))}
@@ -927,6 +850,17 @@ function DownloadSection() {
 function Footer() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [showReportDialog, setShowReportDialog] = useState(false);
+
+const [reportForm, setReportForm] = useState({
+  name: "",
+  email: "",
+  category: "Technical Issue",
+  subject: "",
+  description: "",
+});
+
+const [reportMessage, setReportMessage] = useState("");
 
   const handleSubscribe = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -939,6 +873,31 @@ function Footer() {
     setMessage("Thank you for your interest!");
     setEmail("");
   };
+
+  const handleReportSubmit = (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+
+  if (
+    !reportForm.name.trim() ||
+    !reportForm.email.trim() ||
+    !reportForm.email.includes("@") ||
+    !reportForm.subject.trim() ||
+    !reportForm.description.trim()
+  ) {
+    setReportMessage("Please fill in all fields with valid information.");
+    return;
+  }
+
+  setReportMessage("Thank you! Your issue has been submitted successfully.");
+
+  setReportForm({
+    name: "",
+    email: "",
+    category: "Technical Issue",
+    subject: "",
+    description: "",
+  });
+};
 
   const groups = [
     {
@@ -1015,47 +974,66 @@ function Footer() {
   };
 
   return (
-    <footer className="site-footer" id="site-footer">
-      <div className="footer-main section-shell">
-        
-        {groups.map((group) => (
-          <div className="footer-links-column" key={group.title}>
-            <h3>{group.title}</h3>
-            <ul>
-              {group.links.map((link) => (
-                <li key={link}>
-                  <a
-                    href={
-                      link === "About Us"
-                        ? "/about"
-                        : link === "Features"
-                          ? "/features"
-                          : link === "Community"
-                            ? "/community"
-                            : link === "Events"
-                              ? "/events"
-                              : link === "Resources"
-                                ? "/resources"
-                                : link === "Contact"
-                                  ? "/contact"
-                                  : link === "Home"
-                                    ? "/"
-                                    : `#${link
-                                        .toLowerCase()
-                                        .replaceAll(" ", "-")}`
-                    }
-                    onClick={(event) => {
-                      event.preventDefault();
-                      footerGo(link);
-                    }}
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+  <footer className="site-footer" id="site-footer">
+    <div className="footer-main section-shell">
+
+      {groups.map((group) => (
+        <div className="footer-links-column" key={group.title}>
+          <h3>{group.title}</h3>
+          <ul>
+            {group.links.map((link) => (
+              <li key={link}>
+                <a
+                  href={
+                    link === "About Us"
+                      ? "/about"
+                      : link === "Features"
+                        ? "/features"
+                        : link === "Community"
+                          ? "/community"
+                          : link === "Events"
+                            ? "/events"
+                            : link === "Resources"
+                              ? "/resources"
+                              : link === "Contact"
+                                ? "/contact"
+                                : link === "Home"
+                                  ? "/"
+                                  : `#${link
+                                      .toLowerCase()
+                                      .replaceAll(" ", "-")}`
+                  }
+                  onClick={(event) => {
+  if (legalPolicyRoutes[link]) {
+    event.preventDefault();
+    navigateToPage(legalPolicyRoutes[link]);
+    return;
+  }
+
+  if (privacySafetyRoutes[link]) {
+    event.preventDefault();
+    navigateToPage(privacySafetyRoutes[link]);
+    return;
+  }
+
+  if (link === "Report an Issue") {
+    event.preventDefault();
+    setShowReportDialog(true);
+    setReportMessage("");
+    return;
+  }
+
+  event.preventDefault();
+  footerGo(link);
+}}
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
 
         <div className="footer-newsletter">
           <h3>Stay Updated</h3>
@@ -1098,7 +1076,7 @@ function Footer() {
         </span>
 
         <span>
-          <Mail size={16} /> Hello@jinanam.org
+          <Mail size={16} /> namo@jinanam.org
         </span>
       </div>
 
@@ -1114,12 +1092,147 @@ function Footer() {
           </span>
         </div>
       </div>
+
+          {showReportDialog && (
+  <div className="report-dialog-overlay">
+    <div className="report-dialog">
+
+      <button
+        className="report-dialog-close"
+        onClick={() => setShowReportDialog(false)}
+        type="button"
+      >
+        ×
+      </button>
+
+      <div className="report-dialog-header">
+        <h2>Report an Issue</h2>
+        <p>
+          Help us improve JiNANAM by reporting any problems
+          you experience.
+        </p>
+      </div>
+
+      <form onSubmit={handleReportSubmit}>
+
+        <div className="report-form-group">
+          <label>Full Name *</label>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={reportForm.name}
+            onChange={(e) =>
+              setReportForm({
+                ...reportForm,
+                name: e.target.value,
+              })
+            }
+            required
+          />
+        </div>
+
+        <div className="report-form-group">
+          <label>Email Address *</label>
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            value={reportForm.email}
+            onChange={(e) =>
+              setReportForm({
+                ...reportForm,
+                email: e.target.value,
+              })
+            }
+            required
+          />
+        </div>
+
+        <div className="report-form-group">
+          <label>Issue Category *</label>
+          <select
+            value={reportForm.category}
+            onChange={(e) =>
+              setReportForm({
+                ...reportForm,
+                category: e.target.value,
+              })
+            }
+          >
+            <option>Technical Issue</option>
+            <option>Login & Registration</option>
+            <option>Account Related</option>
+            <option>Content Issue</option>
+            <option>Payment & Donation</option>
+            <option>Security & Privacy</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div className="report-form-group">
+          <label>Subject *</label>
+          <input
+            type="text"
+            placeholder="Briefly describe the issue"
+            value={reportForm.subject}
+            onChange={(e) =>
+              setReportForm({
+                ...reportForm,
+                subject: e.target.value,
+              })
+            }
+            required
+          />
+        </div>
+
+        <div className="report-form-group">
+          <label>Issue Description *</label>
+          <textarea
+            placeholder="Explain the issue you are facing..."
+            rows={4}
+            value={reportForm.description}
+            onChange={(e) =>
+              setReportForm({
+                ...reportForm,
+                description: e.target.value,
+              })
+            }
+            required
+          />
+        </div>
+
+        {reportMessage && (
+          <p className="report-form-message">
+            {reportMessage}
+          </p>
+        )}
+
+        <div className="report-dialog-actions">
+          <button
+            type="button"
+            className="report-cancel-btn"
+            onClick={() => setShowReportDialog(false)}
+          >
+            Cancel
+          </button>
+
+          <button type="submit" className="report-submit-btn">
+            Submit Report
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+)}
+
     </footer>
   );
 }
 
 function App() {
   const currentPath = window.location.pathname;
+  const isLegalPolicyPage = currentPath.startsWith("/legal/");
+  const isPrivacySafetyPage = currentPath.startsWith("/privacy-safety/");
 
   const isLoginPage = currentPath === "/login";
   const isSignupPage = currentPath === "/signup";
@@ -1145,43 +1258,50 @@ function App() {
     <div className="app">
       <Navbar />
 
-      <main>
-        {isFourAppInfoPage ? (
-  <FourAppInfo />
-) : isAboutPage ? (
-  <AboutUs />
-) : isFeaturesPage ? (
-  <FeaturesPage />
-) : isCommunityPage ? (
-  <CommunityPage />
-) : isEventsPage ? (
-  <EventPage />
-) : isResourcesPage ? (
-  <Resources />
-) : isContactPage ? (
-  <ContactPage />
-) : (
-  <>
-    <Hero />
-    <Statistics />
-    <HomeFeatures />
-    <WhyJinANAM />
-    <HomeCommunity />
-    <Testimonials />
-    <DownloadSection />
-  </>
-)}
-      </main>
+<main>
+  {isPrivacySafetyPage ? (
+    <PrivacySafetyPage />
+  ) : isLegalPolicyPage ? (
+    <LegalPolicyPage />
+  ) : isFourAppInfoPage ? (
+    <FourAppInfo />
+  ) : isAboutPage ? (
+    <AboutUs />
+  ) : isFeaturesPage ? (
+    <FeaturesPage />
+  ) : isCommunityPage ? (
+    <CommunityPage />
+  ) : isEventsPage ? (
+    <EventPage />
+  ) : isResourcesPage ? (
+    <Resources />
+  ) : isContactPage ? (
+    <ContactPage />
+  ) : (
+    <>
+      <Hero />
+      <Statistics />
+      <HomeFeatures />
+      <WhyJinANAM />
+      <HomeCommunity />
+      <Testimonials />
+      <DownloadSection />
+    </>
+  )}
+
+</main>
 
       <Footer />
 
-      {!isFourAppInfoPage &&
-        !isAboutPage &&
-        !isFeaturesPage &&
-        !isCommunityPage &&
-        !isEventsPage &&
-        !isResourcesPage &&
-        !isContactPage && (
+{!isPrivacySafetyPage &&
+  !isLegalPolicyPage &&
+  !isFourAppInfoPage &&
+  !isAboutPage &&
+  !isFeaturesPage &&
+  !isCommunityPage &&
+  !isEventsPage &&
+  !isResourcesPage &&
+  !isContactPage && (
           <button
         className="about-back-top"
         aria-label="Back to top"
