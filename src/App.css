@@ -2880,3 +2880,140 @@
     width: 100%;
   }
 }
+
+
+
+
+/* =========================
+   JOINING BANNER
+========================= */
+
+.joining-banner {
+  position: relative;
+  width: min(1180px, calc(100% - 80px));
+  min-height: 95px;
+  margin: 50px auto 0px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 30px 19px 46px;
+  border-radius: 15px;
+  background:
+    radial-gradient(circle at 72% 50%, rgba(66, 105, 188, 0.42), transparent 27%),
+    linear-gradient(105deg, #092457, #122f72 62%, #0b255a);
+  color: white;
+}
+
+.joining-content {
+  position: relative;
+  z-index: 4;
+}
+
+.joining-content h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.45;
+  letter-spacing: -0.3px;
+}
+
+.joining-content p {
+  margin: 4px 0 0;
+  color: #b8c7e7;
+  font-size: 14px;
+}
+
+
+.joining-hands {
+  position: absolute;
+  right: 190px;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  opacity: 1;
+}
+
+/* Soft glow behind the image */
+.hands-glow {
+  position: absolute;
+  width: 200px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+}
+
+/* Keep the hands image fully visible */
+.hands-symbol {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+
+.joining-hand-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+
+  /* Fade only the left and right edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 82%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 82%,
+    transparent 100%
+  );
+}
+
+.hands-glow {
+  position: absolute;
+  width: 200px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+}
+
+.hands-symbol {
+  position: relative;
+  z-index: 2;
+  font-size: 58px;
+  filter: grayscale(0.15);
+  opacity: 1;
+}
+
+.joining-button {
+  position: relative;
+  z-index: 5;
+  min-height: 34px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  color: white;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.joining-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}

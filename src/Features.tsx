@@ -26,7 +26,6 @@ import {
   BriefcaseBusiness,
   CreditCard,
   Gift,
-  ShieldCheck,
   UserRound,
   Wallet,
   Waves,
@@ -39,15 +38,15 @@ import "./Features.css";
 
 const featureCategories = [
   {
-    category: "Monk & Sadhvi Management",
+    category: "Monk Management",
     description:
       "Stay connected with Jain monks and sadhvis through tracking, profiles and seva services.",
     features: [
       {
         number: "01",
-        title: "Monk & Sadhvi Profiles",
+        title: "Monk Directory",
         description:
-          "Explore profiles and important information about Jain monks and sadhvis.",
+          "Explore profiles and important information about monks and sadhvis.",
         icon: Users,
         color: "saffron",
       },
@@ -69,19 +68,19 @@ const featureCategories = [
       },
       {
         number: "04",
-        title: "99 Tour Tracking",
+        title: "SOS & Emergency Alerts",
         description:
-          "Follow important location and travel updates during 99 Yatra tours.",
-        icon: Route,
-        color: "orange",
+          "Support emergency communication with alerts for users.",
+        icon: ShieldAlert,
+        color: "pink",
       },
       {
         number: "05",
-        title: "Monk SOS & Emergency Alerts",
+        title: "Vihar Routes",
         description:
-          "Support emergency communication with alerts for authorized users.",
-        icon: ShieldAlert,
-        color: "pink",
+          "View live location and travel updates of Jain monks for safety and seva.",
+        icon: MapPin,
+        color: "blue",
       },
     ],
   },
@@ -208,6 +207,14 @@ const featureCategories = [
           "Discover and follow organized 99 Yatra pilgrimage tours.",
         icon: MapPin,
         color: "saffron",
+      },
+      {
+        number: "20",
+        title: "Diksha",
+        description:
+            "Explore information, guidance, and updates about ceremonies and spiritual journeys.",
+        icon: BookOpen,
+        color: "purple",
       },
     ],
   },
@@ -677,6 +684,8 @@ function PhoneMockup({
   );
 }
 
+
+
 export default function Features() {
   return (
     <div className="features-page">
@@ -706,18 +715,8 @@ export default function Features() {
             Discover powerful features designed to connect, serve, preserve and
             empower every Jain.
           </p>
-
-          <div className="features-hero-note">
-            <ShieldCheck size={16} />
-            Built around community, culture and seva
-          </div>
         </div>
 
-        <div className="features-hero-bottom">
-          <span />
-          <span />
-          <span />
-        </div>
       </section>
 
       {/* FEATURES CATALOG */}
@@ -750,10 +749,6 @@ export default function Features() {
     </span>
 
     <h2>Currently Available</h2>
-
-    <p>
-      Explore the features and services currently available on JiNANAM.
-    </p>
   </div>
 
   <span className="features-status-count">
@@ -1011,3 +1006,4 @@ export default function Features() {
     </div>
   );
 }
+

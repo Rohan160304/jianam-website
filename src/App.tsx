@@ -10,6 +10,8 @@ import LoginPage from "./Login";
 import Signup from "./Signup";
 import LegalPolicyPage, { legalPolicyRoutes } from "./LegalPolicyPage";
 import PrivacySafetyPage, { privacySafetyRoutes, } from "./PrivacySafetyPage";
+import JMF from "./JMF";
+import HelpSupportPage, { helpSupportRoutes } from "./HelpSupportPage";
 import {
   ArrowRight,
   BookOpen,
@@ -100,10 +102,11 @@ const testimonials = [
 
 const navItems = [
   "Home",
-  "About",
+  /*"About",*/
   "Features",
-  "Community",
-  "Events",
+  /*"Community",*/
+  /*"Events",*/
+  "JMF",
   "Resources",
   "Contact",
 ];
@@ -122,12 +125,14 @@ function Navbar() {
   const [] = useState("EN");
 
   const currentPath = window.location.pathname;
+  
 
   const isHomePage = currentPath === "/";
   const isAboutPage = currentPath === "/about";
   const isFeaturesPage = currentPath === "/features";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
+  const isJMFPage = currentPath === "/jmf";
   const isResourcesPage = currentPath === "/resources";
   const isContactPage = currentPath === "/contact";
 
@@ -140,6 +145,7 @@ function Navbar() {
       Features: "/features",
       Community: "/community",
       Events: "/events",
+      JMF: "/jmf",
       Resources: "/resources",
       Contact: "/contact",
     };
@@ -187,6 +193,7 @@ function Navbar() {
               (item === "Features" && isFeaturesPage) ||
               (item === "Community" && isCommunityPage) ||
               (item === "Events" && isEventsPage) ||
+              (item === "JMF" && isJMFPage) ||
               (item === "Resources" && isResourcesPage) ||
               (item === "Contact" && isContactPage);
 
@@ -201,6 +208,8 @@ function Navbar() {
                       ? "/community"
                       : item === "Events"
                         ? "/events"
+                        : item === "JMF"
+                          ? "/jmf"
                         : item === "Resources"
                           ? "/resources"
                           : "/contact";
@@ -847,6 +856,43 @@ function DownloadSection() {
   );
 }
 
+/* =========================================================
+   JOINING HANDS BANNER
+   ========================================================= */
+
+function JoiningHandsBanner() {
+  return (
+    <section className="joining-banner">
+      <div className="joining-content">
+        <h2>
+          Together, let's build a stronger,
+          <br />
+          united and empowered Jain world.
+        </h2>
+      </div>
+
+      <div className="joining-hands">
+        <div className="hands-glow" />
+        <div className="hands-symbol"><img
+              src="/images/Jain temple2.jpg"
+              alt="World map outline showing the global Jain network"
+              className="joining-hand-image"
+            /></div>
+      </div>
+
+      <button
+        className="about-button joining-button"
+        onClick={() => {
+          window.location.href = "mailto:namo@jinanam.org";
+        }}
+      >
+        Join Us Today
+        <ArrowRight size={15} />
+      </button>
+    </section>
+  );
+}
+
 function Footer() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -1013,6 +1059,12 @@ const [reportMessage, setReportMessage] = useState("");
   if (privacySafetyRoutes[link]) {
     event.preventDefault();
     navigateToPage(privacySafetyRoutes[link]);
+    return;
+  }
+
+  if (helpSupportRoutes[link]) {
+    event.preventDefault();
+    navigateToPage(helpSupportRoutes[link]);
     return;
   }
 
@@ -1233,6 +1285,7 @@ function App() {
   const currentPath = window.location.pathname;
   const isLegalPolicyPage = currentPath.startsWith("/legal/");
   const isPrivacySafetyPage = currentPath.startsWith("/privacy-safety/");
+  const isHelpSupportPage = currentPath.startsWith("/help-support/");
 
   const isLoginPage = currentPath === "/login";
   const isSignupPage = currentPath === "/signup";
@@ -1241,6 +1294,7 @@ function App() {
   const isFeaturesPage = currentPath === "/features";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
+  const isJMFPage = currentPath === "/jmf";
   const isResourcesPage = currentPath === "/resources";
   const isContactPage = currentPath === "/contact";
 
@@ -1259,7 +1313,11 @@ function App() {
       <Navbar />
 
 <main>
-  {isPrivacySafetyPage ? (
+  {isHelpSupportPage ? (
+    <HelpSupportPage />
+) : isJMFPage ? (
+    <JMF />
+) : isPrivacySafetyPage ? (
     <PrivacySafetyPage />
   ) : isLegalPolicyPage ? (
     <LegalPolicyPage />
@@ -1286,6 +1344,7 @@ function App() {
       <HomeCommunity />
       <Testimonials />
       <DownloadSection />
+      <JoiningHandsBanner />
     </>
   )}
 
@@ -1293,7 +1352,9 @@ function App() {
 
       <Footer />
 
-{!isPrivacySafetyPage &&
+{!isHelpSupportPage &&
+  !isJMFPage &&
+  !isPrivacySafetyPage &&
   !isLegalPolicyPage &&
   !isFourAppInfoPage &&
   !isAboutPage &&

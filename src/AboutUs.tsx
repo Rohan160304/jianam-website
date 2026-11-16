@@ -1,5 +1,4 @@
-﻿
-import {
+﻿import {
   ArrowRight,
   Building2,
   CheckCircle2,

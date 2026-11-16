@@ -378,6 +378,7 @@ function ContactPage() {
           </div>
         </div>
       </section>
+      <JoiningHandsBanner />
       <button
         className="about-back-top"
         aria-label="Back to top"
@@ -386,6 +387,47 @@ function ContactPage() {
         ↑
       </button>
     </main>
+  );
+}
+
+
+
+
+
+/* =========================================================
+   JOINING HANDS BANNER
+   ========================================================= */
+
+function JoiningHandsBanner() {
+  return (
+    <section className="joining-banner">
+      <div className="joining-content">
+        <h2>
+          Explore JiNANAM’s useful tools and
+          <br />
+          services, all in one place.
+        </h2>
+      </div>
+
+      <div className="joining-hands">
+        <div className="hands-glow" />
+        <div className="hands-symbol"><img
+              src="/images/Womens group2.png"
+              alt="World map outline showing the global Jain network"
+              className="joining-hand-image"
+            /></div>
+      </div>
+
+      <button
+        className="about-button joining-button"
+        onClick={() => {
+          window.location.href = "mailto:namo@jinanam.org";
+        }}
+      >
+        Join Us Today
+        <ArrowRight size={15} />
+      </button>
+    </section>
   );
 }
 

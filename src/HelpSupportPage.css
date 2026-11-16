@@ -1,0 +1,136 @@
+
+.help-support-page {
+  min-height: 75vh;
+  padding: 65px 20px;
+  background: #faf8f4;
+  color: #302820;
+}
+
+.help-support-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.help-support-back {
+  display: inline-block;
+  color: #b66a32;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.help-support-back:hover {
+  text-decoration: underline;
+}
+
+.help-support-header {
+  text-align: center;
+  padding: 35px 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fff8eb, #f6e9d6);
+  border: 1px solid #ead7bb;
+}
+
+.help-support-eyebrow {
+  color: #b66a32;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.help-support-header h1 {
+  color: #55351f;
+  font-size: clamp(30px, 5vw, 43px);
+  margin: 15px 0;
+}
+
+.help-support-header p {
+  max-width: 700px;
+  margin: auto;
+  color: #716052;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.help-support-content {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.help-support-section {
+  padding: 25px 28px;
+  background: #fff;
+  border: 1px solid #eee4d8;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(70, 45, 20, 0.04);
+}
+
+.help-support-section h2 {
+  color: #9b592b;
+  font-size: 19px;
+  margin: 0 0 12px;
+}
+
+.help-support-section p {
+  color: #665b51;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.help-support-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 35px 20px;
+  border-radius: 16px;
+  background: #30203c;
+  color: #fff;
+}
+
+.help-support-footer h2 {
+  color: #f5d29a;
+  margin: 0 0 10px;
+}
+
+.help-support-footer p {
+  color: #e2d8e8;
+  margin-bottom: 22px;
+}
+
+.help-support-contact {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #e8b66b;
+  color: #30203c;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.help-support-contact:hover {
+  background: #f5d29a;
+}
+
+@media (max-width: 600px) {
+  .help-support-page {
+    padding: 35px 15px;
+  }
+
+  .help-support-header {
+    padding: 28px 17px;
+  }
+
+  .help-support-section {
+    padding: 20px;
+  }
+
+  .help-support-section h2 {
+    font-size: 17px;
+  }
+
+  .help-support-section p {
+    font-size: 14px;
+  }
+}
