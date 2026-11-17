@@ -48,11 +48,6 @@ import {
 import "./App.css";
 
 
-const features: {
-  name: string;
-  icon: typeof Landmark;
-  color: string;
-}[] = [];
 
 const communityNodes = [
   { label: "Temple", icon: Landmark, className: "node-temple" },
