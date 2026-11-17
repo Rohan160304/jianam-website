@@ -35,7 +35,6 @@ import {
   Building2,
   Gift,
   Landmark,
-  Smartphone,
   Sparkles,
   Download,
   Home,
@@ -318,7 +317,7 @@ function Hero() {
             Explore Platform <ArrowRight size={18} />
           </a>
 
-          <a className="button button-outline button-large" href="#download">
+          <a className="button button-outline button-large" href="/download-apps">
             <Download size={17} />
             Download App
           </a>
@@ -703,45 +702,6 @@ function JoiningHandsBanner() {
     </section>
   );
 }
-
-
-function DownloadSection() {
-  return (
-    <section className="download-section section-shell" id="download">
-      <div className="download-copy">
-        <span className="download-eyebrow">
-          <Smartphone size={15} />
-          YOUR COMMUNITY, ON THE GO
-        </span>
-
-        <h2>
-          Take JiNANAM
-          <br />
-          With You. Everywhere.
-        </h2>
-
-        <p>
-          Download our app and stay connected anytime, anywhere.
-        </p>
-
-        <button
-          type="button"
-          className="download-now-button"
-          onClick={() => {
-            window.location.href = "/download-apps";
-          }}
-        >
-          Download Now
-          <ArrowRight size={18} />
-        </button>
-      </div>
-
-      <div className="phone-showcase">
-      </div>
-    </section>
-  );
-}
-
 
 
 
@@ -1202,7 +1162,6 @@ function App() {
       <WhyJinANAM />
       <HomeCommunity />
       <Testimonials />
-      <DownloadSection />
       <JoiningHandsBanner />
     </>
   )}
