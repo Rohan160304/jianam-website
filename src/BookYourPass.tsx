@@ -1,5 +1,5 @@
 
-import { ArrowLeft, ArrowRight, CalendarDays, Ticket } from "lucide-react";
+import { ArrowLeft, ArrowRight, Ticket } from "lucide-react";
 import "./BookYourPass.css";
 
 const passSections = [
