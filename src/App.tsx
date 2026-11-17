@@ -13,6 +13,7 @@ import PrivacySafetyPage, { privacySafetyRoutes, } from "./PrivacySafetyPage";
 import JMF from "./JMF";
 import HelpSupportPage, { helpSupportRoutes } from "./HelpSupportPage";
 import BookYourPass from "./BookYourPass";
+import AppDownloads from "./AppDownloads";
 import {
   ArrowRight,
   BookOpen,
@@ -36,9 +37,6 @@ import {
   Landmark,
   Smartphone,
   Sparkles,
-  Bell,
-  CircleUserRound,
-  Search,
   Download,
   Home,
   Utensils,
@@ -104,7 +102,7 @@ const navItems = [
   /*"Community",*/
   /*"Events",*/
   "JMF",
-  "Resources",
+  /*"Resources",*/
   "Contact",
 ];
 
@@ -674,184 +672,6 @@ function Testimonials() {
   );
 }
 
-function FakeQrCode({
-  variant,
-}: {
-  variant: "android" | "ios";
-}) {
-  return (
-    <div
-      className={`qr-code qr-${variant}`}
-      aria-label={`${variant} QR code illustration`}
-    >
-      <div className="qr-finder finder-one">
-        <span />
-      </div>
-      <div className="qr-finder finder-two">
-        <span />
-      </div>
-      <div className="qr-finder finder-three">
-        <span />
-      </div>
-      <div className="qr-pattern" />
-      <span className="qr-center">
-        {variant === "android" ? "▶" : "●"}
-      </span>
-    </div>
-  );
-}
-
-function PhoneMockup({
-  screen,
-}: {
-  screen: "welcome" | "app";
-}) {
-  return (
-    <div className={`phone-frame phone-${screen}`}>
-      <div className="phone-side-button" />
-      <div className="phone-hardware">
-        <div className="phone-island" />
-        <div className="phone-status">
-          <span>9:41</span>
-          <span>● ▰ ▰</span>
-        </div>
-
-        {screen === "welcome" ? (
-          <div className="phone-welcome-screen">
-            <div className="phone-brand">
-              <img src="/logo.png" alt="JiNANAM" />
-            </div>
-            <div className="phone-artwork">
-              <div className="phone-sun" />
-              <div className="phone-temple">
-                <Landmark size={66} />
-              </div>
-            </div>
-            <span className="phone-kicker">WELCOME TO</span>
-            <h3>JiNANAM</h3>
-            <p>
-              One Community.
-              <br />
-              Infinite Possibilities.
-            </p>
-            <span className="phone-small-copy">
-              Connecting Jain families everywhere.
-            </span>
-            <button type="button">
-              Get Started <ArrowRight size={13} />
-            </button>
-          </div>
-        ) : (
-          <div className="phone-app-screen">
-            <div className="app-greeting">
-              <span>Namaste 🙏</span>
-              <Bell size={17} />
-            </div>
-            <h4>Welcome to JiNANAM</h4>
-            <div className="app-search">
-              <Search size={13} />
-              Search services
-            </div>
-            <div className="app-feature-grid">
-              {features.slice(0, 8).map(({ name }) => (
-                <div className="app-feature" key={name}>
-                  <small>{name}</small>
-                </div>
-              ))}
-            </div>
-            <div className="app-bottom-nav">
-              <House size={16} />
-              <Globe2 size={16} />
-              <Heart size={16} />
-              <CircleUserRound size={16} />
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function DownloadSection() {
-  return (
-    <section className="download-section section-shell" id="download">
-      <div className="download-copy">
-        <span className="download-eyebrow">
-          <Smartphone size={15} />
-          YOUR COMMUNITY, ON THE GO
-        </span>
-        <h2>
-          Take JiNANAM
-          <br />
-          With You. Everywhere.
-        </h2>
-        <p>
-          Download our app and stay connected anytime, anywhere.
-        </p>
-
-        <div className="store-buttons">
-          
-<a
-  href="#download"
-  onClick={(event) => event.preventDefault()}
-  className="store-button"
->
-  <img
-    src="/images/play%20store.png"
-    alt="Google Play"
-    className="store-logo"
-  />
-  <span>
-    <small>GET IT ON</small>
-    <strong>Google Play</strong>
-  </span>
-</a>
-
-
-          
-<a
-  href="#download"
-  onClick={(event) => event.preventDefault()}
-  className="store-button"
->
-  <img
-    src="/images/app%20store.png"
-    alt="App Store"
-    className="store-logo"
-  />
-  <span>
-    <small>Download on the</small>
-    <strong>App Store</strong>
-  </span>
-</a>
-
-        </div>
-      </div>
-
-      <div className="phone-showcase">
-        <PhoneMockup screen="welcome" />
-        <PhoneMockup screen="app" />
-      </div>
-
-      <div className="scan-card">
-        <h3>Scan to Download</h3>
-        <p>Available on Android & iOS</p>
-        <div className="qr-pair">
-          <div className="qr-item">
-            <FakeQrCode variant="android" />
-            <span>Google Play</span>
-          </div>
-          <div className="qr-item">
-            <FakeQrCode variant="ios" />
-            <span>App Store</span>
-          </div>
-        </div>
-        <span className="qr-note">Download links coming soon</span>
-      </div>
-    </section>
-  );
-}
-
 /* =========================================================
    JOINING HANDS BANNER
    ========================================================= */
@@ -888,6 +708,47 @@ function JoiningHandsBanner() {
     </section>
   );
 }
+
+
+function DownloadSection() {
+  return (
+    <section className="download-section section-shell" id="download">
+      <div className="download-copy">
+        <span className="download-eyebrow">
+          <Smartphone size={15} />
+          YOUR COMMUNITY, ON THE GO
+        </span>
+
+        <h2>
+          Take JiNANAM
+          <br />
+          With You. Everywhere.
+        </h2>
+
+        <p>
+          Download our app and stay connected anytime, anywhere.
+        </p>
+
+        <button
+          type="button"
+          className="download-now-button"
+          onClick={() => {
+            window.location.href = "/download-apps";
+          }}
+        >
+          Download Now
+          <ArrowRight size={18} />
+        </button>
+      </div>
+
+      <div className="phone-showcase">
+      </div>
+    </section>
+  );
+}
+
+
+
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -1283,6 +1144,8 @@ function App() {
   const isPrivacySafetyPage = currentPath.startsWith("/privacy-safety/");
   const isHelpSupportPage = currentPath.startsWith("/help-support/");
   const isBookYourPassPage = currentPath === "/book-your-pass";
+  const isAppDownloadsPage =
+  window.location.pathname === "/download-apps";
 
   const isLoginPage = currentPath === "/login";
   const isSignupPage = currentPath === "/signup";
@@ -1310,7 +1173,9 @@ function App() {
       <Navbar />
 
 <main>
-  {isBookYourPassPage ? (
+  {isAppDownloadsPage ? (
+  <AppDownloads />
+) : isBookYourPassPage ? (
   <BookYourPass />
 ) : isHelpSupportPage ? (
     <HelpSupportPage />

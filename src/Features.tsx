@@ -695,17 +695,7 @@ export default function Features() {
 
         <div className="features-container features-hero-content">
           <div className="features-eyebrow">
-            <span className="eyebrow-line" />
-            POWERING COMMUNITIES. ENRICHING LIVES.
-            <span className="eyebrow-line" />
           </div>
-
-          <div className="features-hero-emblem">
-            <span className="emblem-ring">
-              <Landmark size={29} strokeWidth={1.5} />
-            </span>
-          </div>
-
           <h1>
             Everything the Jain Community Needs.
             <span> One Platform.</span>
@@ -716,8 +706,8 @@ export default function Features() {
             empower every Jain.
           </p>
         </div>
-
       </section>
+      <span className="features-blue-line"></span>
 
       {/* FEATURES CATALOG */}
       <section className="features-catalog" id="all-features">
@@ -741,20 +731,6 @@ export default function Features() {
 </div>
 
 {/* CURRENTLY AVAILABLE FEATURES */}
-<div className="features-status-heading">
-  <div>
-    <span className="features-status-label available-label">
-      <span className="status-dot" />
-      AVAILABLE NOW
-    </span>
-
-    <h2>Currently Available</h2>
-  </div>
-
-  <span className="features-status-count">
-    27 Features
-  </span>
-</div>
 
 {featureCategories.map((cat) => (
   <div className="feature-category" key={cat.category}>
@@ -807,11 +783,6 @@ export default function Features() {
       </span>
 
       <h2>More Features on the Way</h2>
-
-      <p>
-        We are working on more experiences to make JiNANAM
-        even more useful for the Jain community.
-      </p>
     </div>
 
     <span className="features-status-count coming-soon-count">

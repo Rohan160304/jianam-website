@@ -1,5 +1,5 @@
 
-import { ArrowLeft, ArrowRight, Ticket } from "lucide-react";
+import { ArrowRight, Ticket } from "lucide-react";
 import "./BookYourPass.css";
 
 const passSections = [
@@ -33,15 +33,6 @@ export default function BookYourPass() {
   return (
     <div className="byp-page">
       <header className="byp-header">
-        <button
-          className="byp-back-button"
-          onClick={() => {
-            window.location.href = "/";
-          }}
-        >
-          <ArrowLeft size={18} />
-          Back to Home
-        </button>
 
         <span className="byp-eyebrow">JAIN-Z TOMORROWLAND</span>
 
