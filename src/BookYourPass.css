@@ -86,7 +86,7 @@
 
 .byp-pass-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -193,4 +193,30 @@
   .byp-pass-card {
     padding: 25px;
   }
+}
+
+
+
+/* book now button */
+.byp-book-now-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #d99b35;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.byp-book-now-button:hover {
+  background: #bd8124;
+  transform: translateY(-2px);
 }

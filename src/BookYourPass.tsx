@@ -1,36 +1,30 @@
 
-import { ArrowLeft, CalendarDays, Ticket } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, Ticket } from "lucide-react";
 import "./BookYourPass.css";
 
 const passSections = [
   {
-    title: "JANUARY – MARCH",
-    subtitle: "Early Booking",
+    title: "Early Booking",
     passes: [
-      { month: "January", price: "₹999" },
-      { month: "February", price: "₹1,499" },
-      { month: "March", price: "₹1,999" },
-      { month: "March (Final)", price: "₹2,499" },
+      { month: "4 Sharing Accommodation", price: "₹3500" },
+      { month: "3 Sharing Accommodation", price: "₹4500" },
+      { month: "2 Sharing Accommodation", price: "₹5500" },
     ],
   },
   {
-    title: "APRIL – JULY",
-    subtitle: "Regular Booking",
+    title: "Regular Booking",
     passes: [
-      { month: "April", price: "₹2,999" },
-      { month: "May", price: "₹3,499" },
-      { month: "June", price: "₹3,999" },
-      { month: "July", price: "₹4,499" },
+      { month: "4 Sharing Accommodation", price: "₹4500" },
+      { month: "3 Sharing Accommodation", price: "₹5500" },
+      { month: "2 Sharing Accommodation", price: "₹6500" },
     ],
   },
   {
-    title: "AUGUST – NOVEMBER",
-    subtitle: "Last Phase Booking",
+    title: "Last Phase Booking",
     passes: [
-      { month: "August", price: "₹4,999" },
-      { month: "September", price: "₹5,499" },
-      { month: "October", price: "₹5,999" },
-      { month: "November", price: "₹6,499" },
+      { month: "4 Sharing Accommodation", price: "₹5500" },
+      { month: "3 Sharing Accommodation", price: "₹6500" },
+      { month: "2 Sharing Accommodation", price: "₹7500" },
     ],
   },
 ];
@@ -60,18 +54,12 @@ export default function BookYourPass() {
       </header>
 
       <main className="byp-content">
-        {passSections.map((section, index) => (
+        {passSections.map((section) => (
           <section className="byp-section" key={section.title}>
             <div className="byp-section-heading">
               <div>
-                <span className="byp-section-number">
-                  SECTION 0{index + 1}
-                </span>
                 <h2>{section.title}</h2>
-                <p>{section.subtitle}</p>
               </div>
-
-              <CalendarDays size={32} />
             </div>
 
             <div className="byp-pass-grid">
@@ -81,7 +69,6 @@ export default function BookYourPass() {
                     <Ticket size={25} />
                   </div>
 
-                  <span className="byp-pass-label">BOOKING PERIOD</span>
 
                   <h3>{pass.month}</h3>
 
@@ -91,9 +78,16 @@ export default function BookYourPass() {
 
                   <div className="byp-price">{pass.price}</div>
 
-                  <span className="byp-dummy-note">
-                    Dummy Price
-                  </span>
+                  <button
+  type="button"
+  className="byp-book-now-button"
+  onClick={() => {
+    // Add booking action here
+  }}
+>
+  Book Now
+  <ArrowRight size={16} />
+</button>
                 </div>
               ))}
             </div>

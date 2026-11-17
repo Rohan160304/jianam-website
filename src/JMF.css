@@ -1106,47 +1106,60 @@
 }
 
 
-/*stay card*/
-.jmf-info-card {
-  position: relative;
-  overflow: hidden;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
-    url("/images/bed.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 24px;
-  padding: 45px;
-  color: #fff;
+
+.jmf-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px 5%;
+  align-items: stretch;
 }
 
-
-/* FOOD SECTION BACKGROUND */
-.jmf-info-food-card {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.65)
-    ),
-    url("/images/food.jpg");
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.jmf-info-grid .jmf-info-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
+.jmf-info-grid .jmf-info-card {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
 
-/* EXPERIENCE SECTION BACKGROUND */
+@media (max-width: 1000px) {
+  .jmf-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .jmf-info-grid {
+    grid-template-columns: 1fr;
+    padding: 30px 18px;
+  }
+}
+
+/* Prevent Experience heading from overflowing */
 .jmf-info-exp-card {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.65)
-    ),
-    url("/image/exp.jpg");
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
 
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.jmf-info-exp-card h2 {
+  font-size: clamp(22px, 2vw, 32px);
+}
+.jmf-info-exp-card h3 {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+  box-sizing: border-box;
 }
