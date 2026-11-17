@@ -12,6 +12,7 @@ import LegalPolicyPage, { legalPolicyRoutes } from "./LegalPolicyPage";
 import PrivacySafetyPage, { privacySafetyRoutes, } from "./PrivacySafetyPage";
 import JMF from "./JMF";
 import HelpSupportPage, { helpSupportRoutes } from "./HelpSupportPage";
+import BookYourPass from "./BookYourPass";
 import {
   ArrowRight,
   BookOpen,
@@ -1281,6 +1282,7 @@ function App() {
   const isLegalPolicyPage = currentPath.startsWith("/legal/");
   const isPrivacySafetyPage = currentPath.startsWith("/privacy-safety/");
   const isHelpSupportPage = currentPath.startsWith("/help-support/");
+  const isBookYourPassPage = currentPath === "/book-your-pass";
 
   const isLoginPage = currentPath === "/login";
   const isSignupPage = currentPath === "/signup";
@@ -1308,7 +1310,9 @@ function App() {
       <Navbar />
 
 <main>
-  {isHelpSupportPage ? (
+  {isBookYourPassPage ? (
+  <BookYourPass />
+) : isHelpSupportPage ? (
     <HelpSupportPage />
 ) : isJMFPage ? (
     <JMF />

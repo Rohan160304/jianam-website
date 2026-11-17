@@ -7,11 +7,12 @@ import {
   Mic2,
   BedDouble,
   Utensils,
-  Crown,
-  Users,
-  Star,
   Sparkles,
   HandHeart,
+  Star,
+  Users,
+  Music,
+  Heart,
 } from "lucide-react";
 import "./JMF.css";
 
@@ -39,12 +40,6 @@ export default function JMF() {
     return () => window.clearInterval(timer);
   }, []);
 
-  const scrollToPasses = () => {
-    document.getElementById("jmf-passes")?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  };
 
   const countdownItems = [
     { label: "Days", value: timeLeft.days },
@@ -75,7 +70,9 @@ export default function JMF() {
             <span>THE BIGGEST JAIN MUSIC CELEBRATION</span>
           </div>
 
-          <p className="jmf-hero-eyebrow">A CELEBRATION LIKE NEVER BEFORE</p>
+          <p className="jmf-hero-eyebrow">
+            A CELEBRATION LIKE NEVER BEFORE
+          </p>
 
           <h1>
             JAIN-Z
@@ -99,18 +96,7 @@ export default function JMF() {
             </span>
           </div>
 
-          <div className="jmf-stage">
-            <div className="jmf-stage-orbit jmf-orbit-one" />
-            <div className="jmf-stage-orbit jmf-orbit-two" />
-
-            <div className="jmf-stage-arch">
-              <Sparkles size={38} />
-            </div>
-
-            <div className="jmf-stage-light jmf-stage-light-left" />
-            <div className="jmf-stage-light jmf-stage-light-right" />
-            <div className="jmf-stage-floor" />
-          </div>
+          
 
           <h2>Three Days of Music, Devotion & Togetherness</h2>
 
@@ -136,7 +122,12 @@ export default function JMF() {
             ))}
           </div>
 
-          <button className="jmf-primary-button" onClick={scrollToPasses}>
+          <button
+            className="jmf-primary-button"
+            onClick={() => {
+            window.location.href = "/book-your-pass";
+            }}
+            >
             BOOK YOUR PASS
             <ArrowRight size={19} />
           </button>
@@ -151,67 +142,132 @@ export default function JMF() {
         </div>
       </section>
 
-      {/* EVENT HIGHLIGHTS */}
-      <section className="jmf-section jmf-highlights-section">
-        <div className="jmf-section-heading">
-          <span>THE EXPERIENCE</span>
-          <h2>More Than Just Music</h2>
-          <p>Everything coming together for an unforgettable celebration.</p>
+      {/* STAY SECTION */}
+      <section className="jmf-info-section" id="jmf-stay">
+        <div className="jmf-info-card">
+          <div className="jmf-info-icon">
+            <BedDouble size={34} />
+          </div>
+
+          <span className="jmf-section-eyebrow">
+            YOUR COMFORT MATTERS
+          </span>
+
+          <h2>STAY</h2>
+
+          <p className="jmf-info-subtitle">
+            A comfortable stay for a memorable celebration.
+          </p>
+
+          <div className="jmf-info-divider" />
+
+          <p className="jmf-info-description">
+            Enjoy a relaxed and convenient stay during the three-day
+            celebration. Accommodation arrangements will be planned to
+            provide attendees with a comfortable experience throughout
+            the event.
+          </p>
+
+          <div className="jmf-info-points">
+            <span>
+              <BedDouble size={18} />
+              Comfortable Accommodation
+            </span>
+            <span>
+              <Users size={18} />
+              Arrangements for Attendees
+            </span>
+            <span>
+              <Heart size={18} />
+              A Relaxed Stay Experience
+            </span>
+          </div>
         </div>
+      </section>
 
-        <div className="jmf-highlights">
-          <div className="jmf-highlight-card">
-            <div className="jmf-highlight-icon">
-              <Sparkles />
-            </div>
-            <h3>Iconic Grand Stage</h3>
-            <p>
-              A breathtaking stage experience unlike anything seen before in
-              the Jain community.
-            </p>
+      {/* FOOD SECTION */}
+      <section className="jmf-info-section jmf-food-section" id="jmf-food">
+        <div className="jmf-info-card jmf-info-food-card">
+          <div className="jmf-info-icon">
+            <Utensils size={34} />
           </div>
 
-          <div className="jmf-highlight-card">
-            <div className="jmf-highlight-icon">
-              <Mic2 />
-            </div>
-            <h3>Top Singers Lineup</h3>
-            <p>
-              A fantastic lineup of popular singers and performers. Artists to
-              be announced soon.
-            </p>
+          <span className="jmf-section-eyebrow">
+            PURE JAIN HOSPITALITY
+          </span>
+
+          <h2>FOOD</h2>
+
+          <p className="jmf-info-subtitle">
+            Thoughtfully planned meals for everyone.
+          </p>
+
+          <div className="jmf-info-divider" />
+
+          <p className="jmf-info-description">
+            Enjoy pure Jain meals during the celebration, with food
+            arrangements planned to make your experience comfortable
+            and convenient.
+          </p>
+
+          <div className="jmf-info-points">
+            <span>
+              <Utensils size={18} />
+              Pure Jain Food
+            </span>
+            <span>
+              <Heart size={18} />
+              Lunch Arrangements
+            </span>
+            <span>
+              <Sparkles size={18} />
+              Choviyar Arrangements
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* EXPERIENCE SECTION */}
+      <section
+        className="jmf-info-section jmf-experience-section"
+        id="jmf-experience"
+      >
+        <div className="jmf-info-card jmf-info-exp-card">
+          <div className="jmf-info-icon">
+            <Sparkles size={34} />
           </div>
 
-          <div className="jmf-highlight-card">
-            <div className="jmf-highlight-icon">
-              <CalendarDays />
-            </div>
-            <h3>3 Days of Celebration</h3>
-            <p>
-              Three unforgettable days filled with music, energy and
-              togetherness.
-            </p>
-          </div>
+          <span className="jmf-section-eyebrow">
+            THREE DAYS TO REMEMBER
+          </span>
 
-          <div className="jmf-highlight-card">
-            <div className="jmf-highlight-icon">
-              <BedDouble />
-            </div>
-            <h3>Comfortable Stay</h3>
-            <p>
-              Well-planned accommodation for a relaxed and memorable
-              experience.
-            </p>
-          </div>
+          <h2>EXPERIENCE</h2>
 
-          <div className="jmf-highlight-card">
-            <div className="jmf-highlight-icon">
-              <Utensils />
-            </div>
-            <h3>Lunch & Choviyar</h3>
-            <p>
-              Pure Jain meals with lunch and choviyar for all attendees.
-            </p>
+          <p className="jmf-info-subtitle">
+            Music, devotion and togetherness on a grand scale.
+          </p>
+
+          <div className="jmf-info-divider" />
+
+          <p className="jmf-info-description">
+            Experience an extraordinary Jain music celebration featuring
+            a grand stage, exciting performances and three days of
+            unforgettable moments with the Jain community.
+          </p>
+
+          <div className="jmf-info-points">
+            <span>
+              <Music size={18} />
+              Grand Music Celebration
+            </span>
+            <span>
+              <Mic2 size={18} />
+              Exciting Artists & Performances
+            </span>
+            <span>
+              <Users size={18} />
+              Three Days of Togetherness
+            </span>
           </div>
         </div>
       </section>
@@ -219,9 +275,14 @@ export default function JMF() {
       {/* STAR LINEUP */}
       <section className="jmf-lineup">
         <div className="jmf-lineup-content">
-          <span className="jmf-lineup-eyebrow">GET READY FOR THE SHOW</span>
+          <span className="jmf-lineup-eyebrow">
+            GET READY FOR THE SHOW
+          </span>
+
           <h2>THE STAR LINEUP</h2>
+
           <div className="jmf-stars">★ ★ ★</div>
+
           <p>Exciting artists. Unforgettable performances.</p>
         </div>
 
@@ -229,9 +290,11 @@ export default function JMF() {
           <div className="jmf-mic-circle jmf-mic-one">
             <Mic2 size={42} />
           </div>
+
           <div className="jmf-mic-circle jmf-mic-two">
             <Mic2 size={60} />
           </div>
+
           <div className="jmf-mic-circle jmf-mic-three">
             <Mic2 size={36} />
           </div>
@@ -243,98 +306,16 @@ export default function JMF() {
         </div>
       </section>
 
-      {/* STAY AND PASSES */}
-      <section className="jmf-section jmf-details-section">
-        <div className="jmf-section-heading">
-          <span>PLAN YOUR EXPERIENCE</span>
-          <h2>Your Celebration Awaits</h2>
-          <p>Explore the stay arrangements and early bird pass options.</p>
-        </div>
-
-        <div className="jmf-details">
-          <div className="jmf-stay-card">
-            <div className="jmf-palitana-art">
-              <div className="jmf-palitana-overlay">
-                <span>YOUR DESTINATION</span>
-                <strong>PALITANA</strong>
-              </div>
-            </div>
-
-            <div className="jmf-stay-content">
-              <span className="jmf-card-eyebrow">THREE DAYS TO REMEMBER</span>
-              <h2>Stay · Food · Experience</h2>
-
-              <div className="jmf-stay-features">
-                <div>
-                  <BedDouble />
-                  <strong>Accommodation</strong>
-                  <small>As per selected pass</small>
-                </div>
-
-                <div>
-                  <Utensils />
-                  <strong>Lunch & Choviyar</strong>
-                </div>
-
-                <div>
-                  <Star />
-                  <strong>3-Day Event Access</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="jmf-passes" id="jmf-passes">
-            <div className="jmf-pass-heading">
-              <span className="jmf-card-eyebrow">LIMITED PERIOD OFFER</span>
-              <h2>EARLY BIRD PASSES</h2>
-              <p>Available from January 2027 to March 2027</p>
-            </div>
-
-            <div className="jmf-pass-options">
-              <div className="jmf-pass-card">
-                <div className="jmf-pass-icon">
-                  <Users size={24} />
-                </div>
-                <strong>4 Sharing</strong>
-                <h3>₹3,999</h3>
-                <span>Per Person</span>
-                <button
-                  onClick={() =>
-                    window.alert("Early bird bookings are coming soon!")
-                  }
-                >
-                  Coming Soon
-                </button>
-              </div>
-
-              <div className="jmf-pass-card jmf-premium-pass">
-                <div className="jmf-pass-popular">PREMIUM</div>
-                <div className="jmf-pass-icon">
-                  <Crown size={24} />
-                </div>
-                <strong>Premium Pass</strong>
-                <h3>₹4,999</h3>
-                <span>Per Person</span>
-                <button
-                  onClick={() =>
-                    window.alert("Early bird bookings are coming soon!")
-                  }
-                >
-                  Coming Soon
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FINAL BANNER */}
       <section className="jmf-footer-banner">
         <div className="jmf-footer-decoration" />
+
         <HandHeart size={38} />
+
         <span>ONE COMMUNITY. ONE CELEBRATION.</span>
+
         <h2>LET’S CREATE JAIN HISTORY</h2>
+
         <p>
           Come together for a once-in-a-lifetime celebration in Palitana.
         </p>

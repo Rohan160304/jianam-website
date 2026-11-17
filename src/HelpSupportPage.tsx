@@ -1,4 +1,6 @@
+
 import "./HelpSupportPage.css";
+import ContactPage from "./Contact";
 
 export const helpSupportRoutes: Record<string, string> = {
   "Help Center": "/help-support/help-center",
@@ -80,35 +82,7 @@ const helpContent: Record<string, HelpPage> = {
       {
         heading: "How can I get additional assistance?",
         content:
-          "Visit the Contact Us page to find the available support contact information.",
-      },
-    ],
-  },
-
-  "contact-us": {
-    title: "Contact Us",
-    intro:
-      "We welcome your questions, feedback, and suggestions. Reach out through the official JiNANAM Foundation communication channels.",
-    sections: [
-      {
-        heading: "General Enquiries",
-        content:
-          "For general questions about JiNANAM, its services, and community activities, contact the foundation through its official contact channels.",
-      },
-      {
-        heading: "Technical Support",
-        content:
-          "If you experience difficulties while using the platform, provide details about the issue through the Report an Issue option.",
-      },
-      {
-        heading: "Feedback and Suggestions",
-        content:
-          "Your feedback helps improve the platform. Share suggestions and comments through the available communication channels.",
-      },
-      {
-        heading: "Contact Information",
-        content:
-          "Please refer to the official JiNANAM Foundation Contact page for verified contact details and communication information.",
+          "Visit the Contact Us page to reach the JiNANAM team through the contact form.",
       },
     ],
   },
@@ -158,7 +132,14 @@ const helpContent: Record<string, HelpPage> = {
 };
 
 export default function HelpSupportPage() {
-  const slug = window.location.pathname.split("/").filter(Boolean).pop() || "";
+  const slug =
+    window.location.pathname.split("/").filter(Boolean).pop() || "";
+
+  // Display the existing Contact.tsx page for the Contact Us route.
+  if (slug === "contact-us") {
+    return <ContactPage />;
+  }
+
   const page = helpContent[slug];
 
   if (!page) {
@@ -181,14 +162,19 @@ export default function HelpSupportPage() {
         </a>
 
         <header className="help-support-header">
-          <span className="help-support-eyebrow">JINANAM FOUNDATION</span>
+          <span className="help-support-eyebrow">
+            JINANAM FOUNDATION
+          </span>
           <h1>{page.title}</h1>
           <p>{page.intro}</p>
         </header>
 
         <div className="help-support-content">
           {page.sections.map((section) => (
-            <section className="help-support-section" key={section.heading}>
+            <section
+              className="help-support-section"
+              key={section.heading}
+            >
               <h2>{section.heading}</h2>
               <p>{section.content}</p>
             </section>
@@ -198,7 +184,10 @@ export default function HelpSupportPage() {
         <div className="help-support-footer">
           <h2>Still Need Assistance?</h2>
           <p>We're here to help you with your questions and concerns.</p>
-          <a className="help-support-contact" href="/contact">
+          <a
+            className="help-support-contact"
+            href="/help-support/contact-us"
+          >
             Contact JiNANAM
           </a>
         </div>
