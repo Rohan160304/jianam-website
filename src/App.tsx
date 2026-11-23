@@ -762,11 +762,11 @@ const [reportMessage, setReportMessage] = useState("");
       title: "Quick Links",
       links: [
         "Home",
-        "About Us",
+        /*"About Us",*/
         "Features",
-        "Community",
-        "Events",
-        "Resources",
+        /*"Community",*/
+        /*"Events",*/
+        /*"Resources",*/
         "Contact",
       ],
     },

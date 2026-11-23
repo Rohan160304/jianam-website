@@ -95,7 +95,7 @@
 .features-hero {
   position: relative;
   display: flex;
-  min-height: 475px;
+  min-height: 350px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -1463,7 +1463,7 @@
 
   .features-hero {
     min-height: 425px;
-    padding: 66px 0 65px;
+    padding: 60px 0 60px;
   }
 
   .features-hero h1 {

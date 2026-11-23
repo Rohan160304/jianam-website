@@ -39,8 +39,7 @@ export default function LoginPage() {
       <div className="login-content">
         <section className="login-intro">
           <a className="login-brand" href="/" aria-label="JiNANAM home">
-            <img src="/logo.png" alt="JiNANAM logo" />
-            <span>JiNANAM</span>
+            <img src="/J2.png" alt="JiNANAM logo" />
           </a>
 
           <div className="login-intro-text">
