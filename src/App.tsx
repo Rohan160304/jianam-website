@@ -168,7 +168,7 @@ function Navbar() {
             goTo("Home");
           }}
         >
-          <img src="/J2.png" alt="JiNANAM Foundation" />
+          <img src="/J2.png" alt="JiNANAM" />
         </a>
 
         <nav
@@ -269,7 +269,7 @@ function EcosystemDiagram() {
       </div>
 
       <div className="ecosystem-core">
-        <img src="/logo.png" alt="JiNANAM Foundation" />
+        <img src="/logo.png" alt="JiNANAM" />
       </div>
 
       {communityNodes.map(({ label, icon: Icon, className }) => (

@@ -81,7 +81,7 @@ export default function LoginPage() {
           <div className="login-card">
             <div className="login-card-heading">
               <div className="login-card-mark">
-                <img src="/logo.png" alt="" />
+                <img src="/J1.jpg" alt="" />
               </div>
 
               <h2>Welcome Back</h2>
