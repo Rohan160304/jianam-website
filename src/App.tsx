@@ -936,7 +936,7 @@ const [reportMessage, setReportMessage] = useState("");
         </span>
 
         <span>
-          <Globe2 size={16} /> www.JINANAM.org
+          <Globe2 size={16} /> www.JiNANAM.org
         </span>
 
         <span>
@@ -947,7 +947,7 @@ const [reportMessage, setReportMessage] = useState("");
       <div className="footer-bottom">
         <div className="section-shell footer-bottom-inner">
           <span>
-            © 2025 JiNANAM Foundation. All rights reserved.
+            © 2025 JiNANAM. All rights reserved.
           </span>
 
           <span>
