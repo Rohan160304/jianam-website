@@ -10,7 +10,6 @@ import LoginPage from "./Login";
 import Signup from "./Signup";
 import LegalPolicyPage, { legalPolicyRoutes } from "./LegalPolicyPage";
 import PrivacySafetyPage, { privacySafetyRoutes, } from "./PrivacySafetyPage";
-import JMF from "./JMF";
 import HelpSupportPage, { helpSupportRoutes } from "./HelpSupportPage";
 import BookYourPass from "./BookYourPass";
 import AppDownloads from "./AppDownloads";
@@ -95,7 +94,6 @@ const navItems = [
   "Features",
   /*"Community",*/
   /*"Events",*/
-  "JMF",
   /*"Resources",*/
   "Contact",
 ];
@@ -121,7 +119,6 @@ function Navbar() {
   const isFeaturesPage = currentPath === "/features";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
-  const isJMFPage = currentPath === "/jmf";
   const isResourcesPage = currentPath === "/resources";
   const isContactPage = currentPath === "/contact";
 
@@ -134,7 +131,6 @@ function Navbar() {
       Features: "/features",
       Community: "/community",
       Events: "/events",
-      JMF: "/jmf",
       Resources: "/resources",
       Contact: "/contact",
     };
@@ -182,7 +178,6 @@ function Navbar() {
               (item === "Features" && isFeaturesPage) ||
               (item === "Community" && isCommunityPage) ||
               (item === "Events" && isEventsPage) ||
-              (item === "JMF" && isJMFPage) ||
               (item === "Resources" && isResourcesPage) ||
               (item === "Contact" && isContactPage);
 
@@ -197,8 +192,6 @@ function Navbar() {
                       ? "/community"
                       : item === "Events"
                         ? "/events"
-                        : item === "JMF"
-                          ? "/jmf"
                         : item === "Resources"
                           ? "/resources"
                           : "/contact";
@@ -1109,7 +1102,6 @@ function App() {
   const isFeaturesPage = currentPath === "/features";
   const isCommunityPage = currentPath === "/community";
   const isEventsPage = currentPath === "/events";
-  const isJMFPage = currentPath === "/jmf";
   const isResourcesPage = currentPath === "/resources";
   const isContactPage = currentPath === "/contact";
 
@@ -1134,8 +1126,6 @@ function App() {
   <BookYourPass />
 ) : isHelpSupportPage ? (
     <HelpSupportPage />
-) : isJMFPage ? (
-    <JMF />
 ) : isPrivacySafetyPage ? (
     <PrivacySafetyPage />
   ) : isLegalPolicyPage ? (
@@ -1171,7 +1161,6 @@ function App() {
       <Footer />
 
 {!isHelpSupportPage &&
-  !isJMFPage &&
   !isPrivacySafetyPage &&
   !isLegalPolicyPage &&
   !isFourAppInfoPage &&
